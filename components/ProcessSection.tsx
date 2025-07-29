@@ -75,7 +75,7 @@ export default function ProcessSection() {
                     >
                       <div className="space-y-3 sm:space-y-4">
                         {/* Icon */}
-                        <div className="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white">
+                        <div className="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mx-auto">
                           <div className="scale-75 sm:scale-100">
                             {step.icon}
                           </div>
