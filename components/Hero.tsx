@@ -1,5 +1,4 @@
 'use client';
-'use client';
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -8,17 +7,6 @@ import { ArrowRightIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 
 export default function Hero() {
-  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
-
-  const handlePhoneClick = (e: React.MouseEvent) => {
-    // On desktop, prevent default and show number
-    if (window.innerWidth >= 1024) {
-      e.preventDefault();
-      setShowPhoneNumber(true);
-    }
-    // On mobile, let the tel: link work normally
-  };
-
   return (
     <section id="hero" className="flex items-start pt-20 pb-2 bg-clr-gray">
       <div className="w-full px-6 lg:px-8">
@@ -42,27 +30,19 @@ export default function Hero() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                   {/* Phone Number Card */}
-                  <a href="tel:+48735491129" className="block" onClick={handlePhoneClick}>
+                  <a href="tel:+48735491129" className="block">
                     <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                       <div className="flex flex-col items-center justify-center text-center h-full">
                         <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4">
                           <PhoneIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                         </div>
-                        <div className="transition-all duration-500 ease-in-out">
-                          {!showPhoneNumber ? (
-                            <h3 className="font-unbounded font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:block hidden lg:block">
-                              Kliknij i Zadzwoń
-                            </h3>
-                          ) : (
-                            <span className="font-unbounded font-bold text-base sm:text-lg lg:text-xl opacity-0 animate-in fade-in duration-500">
-                              735-491-129
-                            </span>
-                          )}
-                        </div>
-                        {/* Mobile always shows the text */}
+                        {/* Mobile shows text, desktop shows phone number */}
                         <h3 className="font-unbounded font-bold text-sm sm:text-base mb-1 sm:mb-2 lg:hidden">
                           Kliknij i Zadzwoń
                         </h3>
+                        <span className="font-unbounded font-bold text-sm sm:text-base lg:text-lg hidden lg:block">
+                          735-491-129
+                        </span>
                       </div>
                     </Card>
                   </a>
