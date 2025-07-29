@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef, ReactNode } from 'react';
+import { useScroll } from '@/contexts/ScrollContext';
 
 interface LazySectionProps {
   children: ReactNode;
+  id?: string;
   threshold?: number;
   rootMargin?: string;
   fallback?: ReactNode;
@@ -11,6 +13,7 @@ interface LazySectionProps {
 
 export default function LazySection({ 
   children, 
+  id,
   threshold = 0.1, 
   rootMargin = '100px',
   fallback = <div className="min-h-[400px] flex items-center justify-center">
@@ -20,8 +23,16 @@ export default function LazySection({
   const [isVisible, setIsVisible] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const { forceLoadSectionId } = useScroll();
 
   useEffect(() => {
+    // Force load if this section is requested
+    if (id && forceLoadSectionId === id && !hasLoaded) {
+      setIsVisible(true);
+      setHasLoaded(true);
+      return;
+    }
+
     if (hasLoaded) return;
     
     const observer = new IntersectionObserver(
@@ -43,7 +54,7 @@ export default function LazySection({
     }
 
     return () => observer.disconnect();
-  }, [threshold, rootMargin, hasLoaded]);
+  }, [threshold, rootMargin, hasLoaded, id, forceLoadSectionId]);
 
   return (
     <div ref={ref}>

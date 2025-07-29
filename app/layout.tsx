@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Unbounded } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ScrollProvider } from '@/contexts/ScrollContext';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -160,9 +161,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${unbounded.variable} font-inter bg-clr-gray`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ScrollProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ScrollProvider>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ArrowRightIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+import { useScroll } from '@/contexts/ScrollContext';
 
 const navLinks = [
   { name: 'Problemy', href: '#problem-section', id: 'problem-section' },
@@ -14,15 +15,36 @@ const navLinks = [
   { name: 'Kontakt', href: '#contact-section', id: 'contact-section' },
 ];
 
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { setForceLoadSectionId } = useScroll();
+
+  const scrollToSection = (sectionId: string) => {
+    // First, try to find the element immediately
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    // If element not found, force load the section
+    setForceLoadSectionId(sectionId);
+
+    // Poll for the element to appear in DOM
+    const pollForElement = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setForceLoadSectionId(null); // Clear the force load
+      } else {
+        // Continue polling
+        setTimeout(pollForElement, 100);
+      }
+    };
+
+    // Start polling after a short delay to allow React to re-render
+    setTimeout(pollForElement, 50);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
