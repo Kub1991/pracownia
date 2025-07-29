@@ -58,6 +58,7 @@ export default function Navbar() {
             <span className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark tracking-tight">
               Pracownia Karolina Szymańska
             </span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -110,6 +111,7 @@ export default function Navbar() {
                   <span className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark tracking-tight">
                   <span className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark tracking-tight">
                     Pracownia Karolina Szymańska
+                  </span>
                   </span>
                 </div>
                 
