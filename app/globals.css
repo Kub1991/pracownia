@@ -115,6 +115,31 @@ html {
   }
 }
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce layout shifts */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Smooth transitions for better UX */
+button, a, .card {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #FAD7DB;
+  outline-offset: 2px;
+}
+
 /* Calendar custom styles */
 .rdp {
   --rdp-cell-size: 36px;

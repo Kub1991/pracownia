@@ -96,7 +96,7 @@ export default function ContactSection() {
               <div className="space-y-6 sm:space-y-8">
                 {/* Phone Number - Main CTA */}
                 <a href="tel:+48735491129" className="block">
-                  <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-6 sm:p-8 border-none shadow-none cursor-pointer transition-all duration-300 hover:-translate-y-0.5">
+                  <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-6 sm:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                     <div className="text-center">
                     <div className="inline-flex items-center justify-center w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-white text-clr-dark mb-4 sm:mb-6">
                       <PhoneIcon className="h-6 sm:h-8 w-6 sm:w-8" />
@@ -115,7 +115,7 @@ export default function ContactSection() {
                 </a>
 
                 {/* Address */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border-none shadow-none">
+                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border border-gray-200 shadow-none">
                   <div className="flex items-start gap-4">
                     <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white flex-shrink-0">
                       <MapPinIcon className="h-5 sm:h-6 w-5 sm:w-6" />
@@ -139,7 +139,7 @@ export default function ContactSection() {
                 </Card>
 
                 {/* Opening Hours */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border-none shadow-none">
+                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border border-gray-200 shadow-none">
                   <div className="flex items-start gap-4">
                     <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white flex-shrink-0">
                       <ClockIcon className="h-5 sm:h-6 w-5 sm:w-6" />
@@ -161,7 +161,7 @@ export default function ContactSection() {
 
               {/* Right Column - Contact Form */}
               <div>
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border-none shadow-none">
+                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-none">
                   <h3 className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark mb-4 sm:mb-6 text-center">
                     Formularz Kontaktowy
                   </h3>
@@ -252,8 +252,9 @@ export default function ContactSection() {
                     {/* Submit Button */}
                     <Button
                       type="submit"
-                      className="w-full bg-clr-dark text-white hover:bg-clr-accent hover:text-clr-dark transition-all duration-200 rounded-full py-2 sm:py-3 font-unbounded font-bold text-sm sm:text-base"
+                      className="w-full bg-clr-dark text-white hover:bg-clr-accent hover:text-clr-dark transition-all duration-200 rounded-full py-3 font-unbounded font-bold text-sm sm:text-base hover:shadow-md"
                       disabled={!formData.consent}
+                      aria-label="Wyślij formularz kontaktowy"
                     >
                       <PaperAirplaneIcon className="h-4 sm:h-5 w-4 sm:w-5 mr-2" />
                       Wyślij Zapytanie

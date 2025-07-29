@@ -110,12 +110,12 @@ export default function Footer() {
               © 2024 Pracownia Protetyki Stomatologicznej - Karolina Szymańska. Wszystkie prawa zastrzeżone.
             </p>
             <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
-              <a href="#" className="text-white/60 hover:text-clr-accent transition-colors">
+              <button onClick={() => alert('Polityka prywatności będzie dostępna wkrótce')} className="text-white/60 hover:text-clr-accent transition-colors">
                 Polityka Prywatności
-              </a>
-              <a href="#" className="text-white/60 hover:text-clr-accent transition-colors">
+              </button>
+              <button onClick={() => alert('Regulamin będzie dostępny wkrótce')} className="text-white/60 hover:text-clr-accent transition-colors">
                 Regulamin
-              </a>
+              </button>
             </div>
           </div>
         </div>

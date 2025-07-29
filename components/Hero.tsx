@@ -43,7 +43,7 @@ export default function Hero() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                   {/* Phone Number Card */}
                   <a href="tel:+48735491129" className="block" onClick={handlePhoneClick}>
-                    <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border-none shadow-none cursor-pointer transition-all duration-300 hover:-translate-y-0.5">
+                    <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                       <div className="flex flex-col items-center justify-center text-center h-full">
                         <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4">
                           <PhoneIcon className="h-5 sm:h-6 w-5 sm:w-6" />
@@ -75,7 +75,7 @@ export default function Hero() {
 
                   {/* Ask About Repair Card */}
                   <Card 
-                    className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:-translate-y-0.5 border border-clr-accent shadow-none"
+                    className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border border-clr-accent shadow-none"
                     onClick={() => {
                       const element = document.getElementById('contact-section');
                       if (element) {
@@ -93,7 +93,7 @@ export default function Hero() {
                 </div>
 
                 {/* Testimonial */}
-                <div className="p-4 sm:p-5 lg:p-6 bg-gray-50 rounded-xl sm:rounded-2xl">
+                <div className="p-4 sm:p-5 lg:p-6 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-100">
                   <div className="flex items-start gap-4">
                     <div className="relative w-10 sm:w-12 h-10 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
                       <Image
@@ -102,6 +102,7 @@ export default function Hero() {
                         fill
                         className="object-cover"
                         sizes="(max-width: 640px) 40px, 48px"
+                        loading="eager"
                       />
                     </div>
                     <div className="flex-1">

@@ -85,7 +85,8 @@ export default function Navbar() {
                 const contactSection = document.getElementById('contact-section');
                 contactSection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-clr-white border border-clr-accent hover:border-clr-dark transition-all duration-200 rounded-full px-4 sm:px-6 py-2 font-medium cursor-pointer text-sm sm:text-base"
+              className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-clr-white border border-clr-accent hover:border-clr-dark transition-all duration-200 rounded-full px-6 py-2 font-unbounded font-medium cursor-pointer text-sm hover:shadow-md"
+              aria-label="Umów wizytę - przejdź do formularza kontaktowego"
             >
               Umów Wizytę
               <ArrowRightIcon className="ml-1 sm:ml-2 h-3 sm:h-4 w-3 sm:w-4" />
@@ -124,7 +125,8 @@ export default function Navbar() {
                   onClick={() => {
                     scrollToSection('contact-section');
                   }}
-                  className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-clr-white border border-clr-accent hover:border-clr-dark transition-all duration-200 rounded-full px-4 sm:px-6 py-2 sm:py-3 font-medium mt-3 sm:mt-4 w-full cursor-pointer text-sm sm:text-base"
+                  className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-clr-white border border-clr-accent hover:border-clr-dark transition-all duration-200 rounded-full px-6 py-3 font-unbounded font-medium mt-4 w-full cursor-pointer text-sm hover:shadow-md"
+                  aria-label="Umów wizytę - przejdź do formularza kontaktowego"
                 >
                   Umów Wizytę
                   <ArrowRightIcon className="ml-1 sm:ml-2 h-3 sm:h-4 w-3 sm:w-4" />

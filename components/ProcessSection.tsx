@@ -70,7 +70,7 @@ export default function ProcessSection() {
                   {processSteps.map((step, index) => (
                     <Card 
                       key={index}
-                      className="bg-gray-50 border border-gray-200 custom-shadow p-4 sm:p-6 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+                      className="bg-gray-50 border border-gray-200 custom-shadow p-4 sm:p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
                       style={{ borderRadius: '16px' }}
                     >
                       <div className="space-y-3 sm:space-y-4">
