@@ -32,8 +32,8 @@ export default function Hero() {
                   {/* Phone Number Card */}
                   <a href="tel:+48735491129" className="block">
                     <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border-none shadow-none">
-                      <div className="flex flex-col items-center justify-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
-                        <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4">
+                      <div className="flex flex-col items-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
+                        <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4 mt-0">
                           <PhoneIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                         </div>
                         {/* Mobile shows text, desktop shows phone number */}
@@ -57,8 +57,8 @@ export default function Hero() {
                       }
                     }}
                   >
-                    <div className="flex flex-col items-center justify-start text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] pt-0">
-                      <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4">
+                    <div className="flex flex-col items-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
+                      <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4 mt-0">
                       <ArrowRightIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                       </div>
                       <span className="font-unbounded font-bold text-sm sm:text-base lg:text-lg text-clr-dark">
