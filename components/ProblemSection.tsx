@@ -94,7 +94,7 @@ export default function ProblemSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Ask About Repair Card */}
             <Card 
-              className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border border-gray-200 shadow-none"
+              className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border border-clr-accent shadow-none"
               onClick={() => {
                 const element = document.getElementById('contact-section');
                 if (element) {
@@ -103,7 +103,7 @@ export default function ProblemSection() {
               }}
             >
               <div className="flex flex-col items-center justify-center text-center h-full">
-                <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4">
+                <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4">
                   <ArrowRightIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                 </div>
                 <span className="font-unbounded font-bold text-sm sm:text-base lg:text-lg text-clr-dark">
