@@ -93,7 +93,7 @@ export default function ContactSection() {
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
               {/* Left Column - Contact Info */}
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                 {/* Phone Number - Main CTA */}
                 <a href="tel:+48735491129" className="block">
                   <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-6 sm:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
@@ -131,7 +131,7 @@ export default function ContactSection() {
               </div>
 
               {/* Right Column - Contact Form */}
-              <div>
+              <div className="order-1 lg:order-2">
                 <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-none">
                   <h3 className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark mb-4 sm:mb-6 text-center">
                     Formularz Kontaktowy
