@@ -115,12 +115,12 @@ export default function ContactSection() {
                 </a>
 
                 {/* Google Map */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden">
+                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden h-full">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.1582626101435!2d17.1516095!3d53.411995700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703cf2aafc11835%3A0x64a424f50f9471f2!2sPracownia%20Protetyki%20Stomatologicznej%20-%20Karolina%20Szyma%C5%84ska!5e0!3m2!1spl!2spl!4v1753817064223!5m2!1spl!2spl"
                     width="100%"
-                    height="400"
-                    className="lg:h-[500px]"
+                    height="100%"
+                    className="min-h-[400px]"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
