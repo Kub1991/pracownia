@@ -33,7 +33,7 @@ export default function Home() {
     <div>
       <Hero />
       
-      <LazySection>
+      <LazySection id="problem-section">
         <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">
           <div className="animate-pulse text-clr-dark/60">Ładowanie...</div>
         </div>}>
@@ -41,7 +41,7 @@ export default function Home() {
         </Suspense>
       </LazySection>
       
-      <LazySection>
+      <LazySection id="process-section">
         <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">
           <div className="animate-pulse text-clr-dark/60">Ładowanie...</div>
         </div>}>
@@ -49,7 +49,7 @@ export default function Home() {
         </Suspense>
       </LazySection>
       
-      <LazySection>
+      <LazySection id="testimonials-section">
         <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">
           <div className="animate-pulse text-clr-dark/60">Ładowanie...</div>
         </div>}>
@@ -57,7 +57,7 @@ export default function Home() {
         </Suspense>
       </LazySection>
       
-      <LazySection>
+      <LazySection id="contact-section">
         <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">
           <div className="animate-pulse text-clr-dark/60">Ładowanie...</div>
         </div>}>
