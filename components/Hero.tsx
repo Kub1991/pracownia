@@ -31,8 +31,8 @@ export default function Hero() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                   {/* Phone Number Card */}
                   <a href="tel:+48735491129" className="block">
-                    <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                      <div className="flex flex-col items-center justify-center text-center h-full">
+                    <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border-none shadow-none">
+                      <div className="flex flex-col items-center justify-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
                         <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4">
                           <PhoneIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                         </div>
