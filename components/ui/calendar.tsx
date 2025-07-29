@@ -50,15 +50,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        Icon: ({ name, ...props }) => {
-          if (name === 'chevron_left') {
-            return <ChevronLeft className="h-4 w-4 text-clr-dark" />;
-          }
-          if (name === 'chevron_right') {
-            return <ChevronRight className="h-4 w-4 text-clr-dark" />;
-          }
-          return null;
-        },
+        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4 text-clr-dark" />,
+        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4 text-clr-dark" />,
       }}
       {...props}
     />
