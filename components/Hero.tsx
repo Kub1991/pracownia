@@ -57,7 +57,7 @@ export default function Hero() {
                       }
                     }}
                   >
-                    <div className="flex flex-col items-center justify-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
+                    <div className="flex flex-col items-center justify-start text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] pt-0">
                       <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4">
                       <ArrowRightIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                       </div>
