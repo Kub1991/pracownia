@@ -55,6 +55,7 @@ export default function Navbar() {
               />
             </div>
             <span className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark tracking-tight">
+            <span className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark tracking-tight">
               Pracownia Karolina Szymańska
             </span>
           </div>
@@ -107,7 +108,8 @@ export default function Navbar() {
                     />
                   </div>
                   <span className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark tracking-tight">
-                    Pracownia Protetyki
+                  <span className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark tracking-tight">
+                    Pracownia Karolina Szymańska
                   </span>
                 </div>
                 
