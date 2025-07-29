@@ -46,7 +46,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <div className="relative w-7 h-7 sm:w-8 sm:h-8">
               <Image
-                src="/Logo_Pracownia_Protetyki_K.Szymanska.png"
+                src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
                 alt="Logo Pracownia Protetyki"
                 fill
                 className="object-contain"
@@ -96,7 +96,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="relative w-7 h-7 sm:w-8 sm:h-8">
                     <Image
-                      src="/Logo_Pracownia_Protetyki_K.Szymanska.png"
+                      src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
                       alt="Logo Pracownia Protetyki"
                       fill
                       className="object-contain"
