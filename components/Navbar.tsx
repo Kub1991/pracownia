@@ -50,7 +50,7 @@ export default function Navbar() {
                 alt="Logo Pracownia Protetyki"
                 fill
                 className="object-contain"
-                sizes="200px"
+                sizes="80px"
                 priority
               />
             </div>
