@@ -50,11 +50,11 @@ export default function Hero() {
                         </div>
                         <div className="transition-all duration-500 ease-in-out">
                           {!showPhoneNumber ? (
-                            <h3 className="font-unbounded font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:block">
+                            <h3 className="font-unbounded font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:block hidden lg:block">
                               Kliknij i Zadzwoń
                             </h3>
                           ) : (
-                            <span className="font-unbounded font-bold text-base sm:text-lg lg:text-xl hidden lg:block opacity-0 animate-in fade-in duration-500">
+                            <span className="font-unbounded font-bold text-base sm:text-lg lg:text-xl opacity-0 animate-in fade-in duration-500">
                               735-491-129
                             </span>
                           )}
@@ -63,12 +63,6 @@ export default function Hero() {
                         <h3 className="font-unbounded font-bold text-sm sm:text-base mb-1 sm:mb-2 lg:hidden">
                           Kliknij i Zadzwoń
                         </h3>
-                        {/* Desktop number that appears after click */}
-                        {showPhoneNumber && (
-                          <span className="font-unbounded font-bold text-base sm:text-lg lg:text-xl hidden lg:block">
-                            735-491-129
-                          </span>
-                        )}
                       </div>
                     </Card>
                   </a>
