@@ -114,48 +114,18 @@ export default function ContactSection() {
                   </Card>
                 </a>
 
-                {/* Address */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border border-gray-200 shadow-none">
-                  <div className="flex items-start gap-4">
-                    <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white flex-shrink-0">
-                      <MapPinIcon className="h-5 sm:h-6 w-5 sm:w-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-unbounded font-bold text-base sm:text-lg text-clr-dark mb-2">
-                        Adres Pracowni
-                      </h3>
-                      <a 
-                        href="https://maps.google.com/?q=ul.+E.+J,+Osmańczyka+18,+77-424+Zakrzewo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-clr-dark/80 hover:text-clr-accent transition-colors cursor-pointer text-sm sm:text-base"
-                      >
-                        ul. E. J, Osmańczyka 18<br />
-                        77-424 Zakrzewo<br />
-                        woj. wielkopolskie
-                      </a>
-                    </div>
-                  </div>
-                </Card>
-
-                {/* Opening Hours */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 border border-gray-200 shadow-none">
-                  <div className="flex items-start gap-4">
-                    <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white flex-shrink-0">
-                      <ClockIcon className="h-5 sm:h-6 w-5 sm:w-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-unbounded font-bold text-base sm:text-lg text-clr-dark mb-2 sm:mb-3">
-                        Godziny Otwarcia
-                      </h3>
-                      <div className="space-y-1 text-sm text-clr-dark/80">
-                        <p><span className="font-medium text-clr-dark">Poniedziałek:</span> 12:00 - 19:00</p>
-                        <p><span className="font-medium text-clr-dark">Wt - Czw:</span> 9:00 - 15:00</p>
-                        <p><span className="font-medium text-clr-dark">Piątek:</span> 9:00 - 14:00</p>
-                        <p><span className="font-medium text-clr-dark">Sobota - Niedziela:</span> Zamknięte</p>
-                      </div>
-                    </div>
-                  </div>
+                {/* Google Map */}
+                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.1582626101435!2d17.1516095!3d53.411995700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703cf2aafc11835%3A0x64a424f50f9471f2!2sPracownia%20Protetyki%20Stomatologicznej%20-%20Karolina%20Szyma%C5%84ska!5e0!3m2!1spl!2spl!4v1753817064223!5m2!1spl!2spl"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Lokalizacja Pracowni Protetyki Stomatologicznej - Karolina Szymańska"
+                  />
                 </Card>
               </div>
 
