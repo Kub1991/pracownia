@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ArrowRightIcon, Bars3Icon } from '@heroicons/react/24/outline';
@@ -32,22 +33,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const ToothIcon = () => (
-    <svg 
-      width="28" 
-      height="28" 
-      viewBox="0 0 32 32" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-clr-dark sm:w-8 sm:h-8"
-    >
-      <path 
-        d="M16 4C12.5 4 10 6.5 10 10c0 2 0 4-1 6-1 2-2 3-2 5 0 2.5 2 4 4 4s4-1.5 4-4c0-1 0-2 1-2s1 1 1 2c0 2.5 2 4 4 4s4-1.5 4-4c0-2-1-3-2-5-1-2-1-4-1-6 0-3.5-2.5-6-6-6z" 
-        fill="currentColor"
-      />
-    </svg>
-  );
-
   return (
     <header className={clsx(
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
@@ -59,7 +44,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <ToothIcon />
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8">
+              <Image
+                src="/Logo_Pracownia_Protetyki_K.Szymanska.png"
+                alt="Logo Pracownia Protetyki"
+                fill
+                className="object-contain"
+                sizes="32px"
+                priority
+              />
+            </div>
             <span className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark tracking-tight">
               Pracownia Protetyki
             </span>
@@ -103,7 +97,15 @@ export default function Navbar() {
             <SheetContent side="right" className="w-72 sm:w-80">
               <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <ToothIcon />
+                  <div className="relative w-7 h-7 sm:w-8 sm:h-8">
+                    <Image
+                      src="/Logo_Pracownia_Protetyki_K.Szymanska.png"
+                      alt="Logo Pracownia Protetyki"
+                      fill
+                      className="object-contain"
+                      sizes="32px"
+                    />
+                  </div>
                   <span className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark tracking-tight">
                     Pracownia Protetyki
                   </span>
