@@ -44,13 +44,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40">
               <Image
                 src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
                 alt="Logo Pracownia Protetyki"
                 fill
                 className="object-contain"
-                sizes="80px"
+                sizes="160px"
                 priority
               />
             </div>
@@ -94,13 +94,13 @@ export default function Navbar() {
             <SheetContent side="right" className="w-72 sm:w-80">
               <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40">
                     <Image
                       src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
                       alt="Logo Pracownia Protetyki"
                       fill
                       className="object-contain"
-                      sizes="80px"
+                      sizes="160px"
                     />
                   </div>
                 </div>
