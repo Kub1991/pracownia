@@ -20,7 +20,7 @@ const problems = [
   {
     icon: <WrenchScrewdriverIcon className="h-6 w-6" />,
     title: "Wypadł ząb z protezy? Wstawię go od ręki.",
-    description: "Doradzę najlepsze rozwiązanie."
+    description: "Szybkie i trwałe mocowanie zębów w protezie."
   },
   {
     icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
