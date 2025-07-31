@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
                     </blockquote>
 
                     {/* Author */}
-                    <div className="text-center space-y-0.5 sm:space-y-1">
+                    <div className="text-center space-y-0.5 sm:space-y-1 min-h-[40px] lg:min-h-[48px] flex flex-col justify-end">
                       <p className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark">
                         {testimonial.author}
                       </p>
