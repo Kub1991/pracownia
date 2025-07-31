@@ -293,7 +293,7 @@ export default function ContactSection() {
                         checked={formData.consent}
                         onCheckedChange={(checked) => handleInputChange('consent', checked as boolean)}
                         required
-                        className="mt-0.5"
+                        className="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0"
                         disabled={submitStatus === 'submitting'}
                       />
                       <Label htmlFor="consent" className="text-xs sm:text-sm text-clr-dark/80 leading-relaxed cursor-pointer">
