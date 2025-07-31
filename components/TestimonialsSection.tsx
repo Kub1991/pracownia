@@ -38,14 +38,14 @@ export default function TestimonialsSection() {
             </div>
 
             {/* Testimonials Grid */}
-            <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-3 mb-8 sm:mb-10 lg:mb-12">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-3 mb-8 sm:mb-10 lg:mb-12 lg:items-stretch">
               {testimonials.map((testimonial, index) => (
                 <Card 
                   key={index}
-                  className="bg-white border-none p-4 sm:p-6 hover:-translate-y-1 transition-all duration-200"
+                  className="bg-white border-none p-4 sm:p-6 hover:-translate-y-1 transition-all duration-200 flex flex-col"
                   style={{ borderRadius: '16px' }}
                 >
-                  <div className="space-y-3 sm:space-y-4">
+                  <div className="space-y-3 sm:space-y-4 flex flex-col h-full">
                     {/* Stars */}
                     <div className="flex justify-center gap-1">
                       {[...Array(5)].map((_, i) => (
@@ -54,12 +54,12 @@ export default function TestimonialsSection() {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-xs sm:text-sm text-clr-dark/90 leading-relaxed text-center font-medium">
+                    <blockquote className="text-xs sm:text-sm text-clr-dark/90 leading-relaxed text-center font-medium flex-grow">
                       "{testimonial.text}"
                     </blockquote>
 
                     {/* Author */}
-                    <div className="text-center space-y-0.5 sm:space-y-1 min-h-[40px] lg:min-h-[48px] flex flex-col justify-end">
+                    <div className="text-center space-y-0.5 sm:space-y-1 mt-auto">
                       <p className="font-unbounded font-bold text-xs sm:text-sm text-clr-dark">
                         {testimonial.author}
                       </p>
