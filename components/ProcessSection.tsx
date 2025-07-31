@@ -82,12 +82,12 @@ export default function ProcessSection() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-unbounded font-bold text-sm sm:text-base text-clr-dark leading-tight">
+                        <h3 className="font-unbounded font-bold text-sm sm:text-base text-clr-dark leading-tight text-center">
                           {step.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs sm:text-sm text-clr-dark/70 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-clr-dark/70 leading-relaxed text-center">
                           {step.description}
                         </p>
                       </div>
