@@ -25,12 +25,12 @@ const problems = [
   {
     icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
     title: "Proteza jest luźna lub niewygodna? Dopasuję ją idealnie.",
-    description: "Profesjonalnie doradzę najlepszą zmianę."
+    description: "Precyzyjne dopasowanie protezy dla maksymalnego komfortu noszenia."
   },
   {
     icon: <SparklesIcon className="h-6 w-6" />,
     title: "Przebarwienia i zużycie? Przywrócę jej estetykę.",
-    description: "Profesjonalne czyszczenie i polerowanie protez."
+    description: "Profesjonalnie doradzę najlepszą zmianę."
   }
 ];
 
