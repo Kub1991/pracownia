@@ -69,8 +69,8 @@ export default function Footer() {
                 <EnvelopeIcon className="h-4 sm:h-5 w-4 sm:w-5 text-clr-accent flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium text-sm sm:text-base">Email:</p>
-                  <a href="mailto:kontakt@protetyka-zakrzewo.pl" className="text-clr-accent hover:text-white transition-colors text-sm sm:text-base">
-                    kontakt@protetyka-zakrzewo.pl
+                  <a href="mailto:protetyka.zakrzewo@gmail.com" className="text-clr-accent hover:text-white transition-colors text-sm sm:text-base">
+                    protetyka.zakrzewo@gmail.com
                   </a>
                 </div>
               </div>
