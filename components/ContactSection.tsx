@@ -36,7 +36,17 @@ const problemOptions = [
   {
     id: 'discoloration',
     icon: <SparklesIcon className="h-5 w-5" />,
-    label: 'Przebarwienia/zużycie'
+    label: 'Przebarwienia'
+  },
+  {
+    id: 'wear',
+    icon: <SparklesIcon className="h-5 w-5" />,
+    label: 'Zużycie'
+  },
+  {
+    id: 'other',
+    icon: <ExclamationTriangleIcon className="h-5 w-5" />,
+    label: 'Inne'
   }
 ];
 
