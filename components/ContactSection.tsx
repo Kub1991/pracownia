@@ -108,7 +108,13 @@ export default function ContactSection() {
         });
         setSelectedProblems([]);
       } else {
-        throw new Error('Failed to submit form');
+        const errorText = await response.text();
+        console.error('Webhook error details:', {
+          status: response.status,
+          statusText: response.statusText,
+          body: errorText
+        });
+        throw new Error(`Failed to submit form: ${response.status} ${response.statusText}${errorText ? ` - ${errorText}` : ''}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
