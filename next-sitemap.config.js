@@ -43,6 +43,7 @@ module.exports = {
     await config.transform(config, '/contact'),
     await config.transform(config, '/about'),
     await config.transform(config, '/faq'),
+    await config.transform(config, '/naprawa-protez-zlotow'),
   ],
 
   robotsTxtOptions: {
