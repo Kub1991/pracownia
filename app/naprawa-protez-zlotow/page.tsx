@@ -152,8 +152,10 @@ export default function NaprawaProtezZlotowPage() {
       />
 
       <div className="min-h-screen bg-clr-gray pt-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
-          <article className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">
+        <div className="w-full px-6 lg:px-8">
+          <div className="w-full max-w-[1200px] mx-auto">
+            <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+              <article>
             
             {/* Header */}
             <header className="mb-8">
@@ -435,7 +437,9 @@ export default function NaprawaProtezZlotowPage() {
               </div>
             </section>
 
-          </article>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </>
