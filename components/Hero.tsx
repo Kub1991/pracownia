@@ -66,17 +66,6 @@ export default function Hero() {
                       </span>
                     </div>
                   </Card>
-                  
-                  {/* Link to Złotów page */}
-                  <div className="sm:col-span-2 text-center mt-4">
-                    <a 
-                      href="/naprawa-protez-zlotow" 
-                      className="inline-flex items-center text-clr-accent hover:text-clr-dark transition-colors text-sm font-medium"
-                    >
-                      Mieszkasz w Złotowie? Zobacz dedykowaną stronę
-                      <ArrowRightIcon className="h-4 w-4 ml-1" />
-                    </a>
-                  </div>
                 </div>
 
                 {/* Testimonial */}

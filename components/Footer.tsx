@@ -116,9 +116,6 @@ export default function Footer() {
               <a href="/policies/Polityka cookies_Karolina.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-clr-accent transition-colors">
                 Polityka Cookies
               </a>
-              <a href="/naprawa-protez-zlotow" className="text-white/60 hover:text-clr-accent transition-colors">
-                Naprawa Protez Złotów
-              </a>
             </div>
           </div>
         </div>
