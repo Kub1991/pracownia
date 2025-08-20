@@ -18,6 +18,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://protetyka-zakrzewo.pl'),
   title: 'Pracownia Protetyki Stomatologicznej – Karolina Szymańska | Naprawa Protez Zakrzewo',
   description: 'Szybka naprawa protez w Zakrzewie i okolicach. Profesjonalna pracownia protetyki stomatologicznej Karoliny Szymańskiej. Naprawa nawet w 24h.',
   keywords: 'naprawa protez, protetyka stomatologiczna, Zakrzewo, technik dentystyczny, naprawa protez 24h, Karolina Szymańska',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
   creator: 'Karolina Szymańska',
   publisher: 'Pracownia Protetyki Stomatologicznej',
   robots: 'index, follow',
+  alternates: {
+    canonical: '/'
+  },
   openGraph: {
     title: 'Pracownia Protetyki Stomatologicznej – Karolina Szymańska',
     description: 'Szybka naprawa protez w Zakrzewie i okolicach. Naprawa nawet w 24h.',
