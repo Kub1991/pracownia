@@ -1,10 +1,18 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { 
   PhoneIcon,
-  ArrowRightIcon
+  MapPinIcon,
+  ClockIcon,
+  CheckCircleIcon,
+  ArrowRightIcon,
+  ExclamationTriangleIcon,
+  WrenchScrewdriverIcon,
+  AdjustmentsHorizontalIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
@@ -32,6 +40,76 @@ export const metadata: Metadata = {
     description: 'Pracownia w Zakrzewie, naprawa protez dla mieszkańców Złotowa nawet w 24 h. Zadzwoń!',
   },
 };
+
+const services = [
+  {
+    icon: <ExclamationTriangleIcon className="h-6 w-6" />,
+    title: "Pęknięta proteza (obsługa Złotów)",
+    description: "Pękniętą protezę naprawiam szybko i precyzyjnie. Stosuję nowoczesne techniki, by zapewnić trwałość. Twoja proteza odzyska dawną funkcjonalność w ciągu jednej wizyty."
+  },
+  {
+    icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
+    title: "Luźna proteza (obsługa Złotów)",
+    description: "Luźną protezę precyzyjnie dopasowuję, by poprawić komfort noszenia. Eliminuję dyskomfort i ryzyko otarć dziąseł. Znów poczujesz się swobodnie podczas mówienia i jedzenia."
+  },
+  {
+    icon: <SparklesIcon className="h-6 w-6" />,
+    title: "Zużyta proteza (obsługa Złotów)",
+    description: "Zużytą protezę profesjonalnie odnawiam – poleruję, wymieniam elementy i poprawiam estetykę. Odzyskasz sprawność i estetyczny wygląd bez konieczności wymiany."
+  },
+  {
+    icon: <SparklesIcon className="h-6 w-6" />,
+    title: "Przebarwienia protezy (obsługa Złotów)",
+    description: "Usuwam przebarwienia protezy za pomocą profesjonalnego piaskowania i dezynfekcji. Twoja proteza znów będzie czysta i estetyczna."
+  },
+  {
+    icon: <WrenchScrewdriverIcon className="h-6 w-6" />,
+    title: "Wypadł ząb z protezy (obsługa Złotów)",
+    description: "Ząb wypadł z protezy? Błyskawicznie uzupełniam brakujące elementy, zapewniając estetykę i funkcjonalność. Przywracam wygodę użytkowania już tego samego dnia."
+  }
+];
+
+const processSteps = [
+  "Zgłoszenie: Zadzwoń lub napisz.",
+  "Wysyłka/Odbiór: Wyślij protezę kurierem lub umów odbiór osobisty.",
+  "Naprawa w 24 h: Szybka, fachowa naprawa.",
+  "Doręczenie: Proteza wraca kurierem lub odbierasz ją osobiście."
+];
+
+const pricingData = [
+  { service: "Naprawa pękniętej protezy", time: "1–2 godz.", price: "od 120 zł" },
+  { service: "Dopasowanie luźnej protezy", time: "1–2 godz.", price: "od 120 zł" },
+  { service: "Renowacja zużytej protezy", time: "2–3 godz.", price: "od 120 zł" },
+  { service: "Czyszczenie przebarwień", time: "1 godz.", price: "od 120 zł" },
+  { service: "Uzupełnienie wypadłego zęba", time: "1–2 godz.", price: "od 120 zł" }
+];
+
+const faqData = [
+  {
+    question: "Ile trwa naprawa protezy?",
+    answer: "Naprawa protezy trwa zwykle od 1 do 2 godzin. Ekspresowa usługa możliwa nawet tego samego dnia."
+  },
+  {
+    question: "Czy NFZ refunduje naprawę protez?",
+    answer: "Tak, naprawa protez może być dofinansowana przez NFZ. Warunki refundacji zależą od typu protezy."
+  },
+  {
+    question: "Czy każdą protezę można naprawić?",
+    answer: "Większość protez można skutecznie naprawić. W wyjątkowych sytuacjach może być konieczna wymiana."
+  },
+  {
+    question: "Ile kosztuje naprawa protezy w Złotowie?",
+    answer: "Koszt naprawy protezy zaczyna się od 120 zł, w zależności od rodzaju usługi i zakresu prac."
+  },
+  {
+    question: "Czy mogę wysłać protezę kurierem?",
+    answer: "Tak, istnieje możliwość wysłania protezy kurierem. Proszę wcześniej o kontakt telefoniczny."
+  },
+  {
+    question: "Czy muszę przyjechać do Zakrzewa?",
+    answer: "Nie, możliwa jest wysyłka protezy kurierem lub umówiony odbiór po wcześniejszym kontakcie."
+  }
+];
 
 export default function NaprawaProtezZlotowPage() {
   return (
@@ -151,269 +229,227 @@ export default function NaprawaProtezZlotowPage() {
         }}
       />
 
-      <div className="min-h-screen bg-clr-gray pt-20">
-        <div className="w-full px-6 lg:px-8">
-          <div className="w-full max-w-[1200px] mx-auto">
-            <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
-              <article>
-            
-            {/* Header */}
-            <header className="mb-8">
-              <div className="inline-block bg-clr-accent text-clr-dark px-3 py-1 rounded-full text-sm font-medium mb-4">
-                Obsługa Złotów
-              </div>
-              <h1 className="font-unbounded font-bold text-3xl lg:text-4xl text-clr-dark mb-4">
-                Naprawa protez Złotów – ekspresowa pomoc
-              </h1>
-              <p className="text-lg text-clr-dark/80 leading-relaxed">
-                Pęknięta, luźna lub zużyta proteza? Pomagam szybko i skutecznie w pracowni protez w Zakrzewie. 
-                Naprawiam uzupełnienia dentystyczne nawet w 24 godziny, gwarantując komfort i trwałość naprawy. 
-                Pracownia znajduje się w Zakrzewie, a pacjentom z Złotowa oferuję odbiór kurierem lub szybką wizytę 
-                po wcześniejszym ustaleniu terminu. Zadzwoń: <strong>735-491-129</strong> i odzyskaj pewność siebie oraz wygodę jedzenia.
-              </p>
-            </header>
+      <div className="min-h-screen bg-clr-gray">
+        {/* Hero Section */}
+        <section className="pt-20 pb-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm bg-white">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
+                  {/* Left Column */}
+                  <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
+                    <div className="space-y-2">
+                      <div className="inline-block bg-clr-accent text-clr-dark px-3 py-1 rounded-full text-sm font-medium">
+                        Obsługa Złotów
+                      </div>
+                      <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark leading-tight">
+                        Naprawa protez Złotów – ekspresowa pomoc
+                      </h1>
+                    </div>
+                    
+                    <p className="text-base sm:text-lg text-clr-dark/80 leading-relaxed">
+                      Pęknięta, luźna lub zużyta proteza? Pomagam szybko i skutecznie w pracowni protez w Zakrzewie. 
+                      Naprawiam uzupełnienia dentystyczne nawet w 24 godziny, gwarantując komfort i trwałość naprawy.
+                    </p>
 
-            {/* CTA Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              <a href="tel:+48735491129" className="block">
-                <Card className="bg-clr-accent text-clr-dark rounded-xl p-6 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex items-center justify-center gap-3">
-                    <PhoneIcon className="h-6 w-6" />
-                    <div className="text-center">
-                      <div className="font-unbounded font-bold text-lg">735-491-129</div>
-                      <div className="text-sm text-clr-dark/80">Zadzwoń teraz</div>
+                    <div className="bg-clr-accent/20 rounded-xl p-4">
+                      <p className="text-clr-dark font-medium text-sm">
+                        <strong>Dla mieszkańców Złotowa:</strong> Oferuję odbiór kurierem lub szybką wizytę po wcześniejszym ustaleniu terminu.
+                      </p>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <a href="tel:+48735491129" className="block">
+                        <Card className="bg-clr-accent text-clr-dark rounded-2xl p-6 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <div className="flex flex-col items-center text-center">
+                            <PhoneIcon className="h-8 w-8 mb-3" />
+                            <span className="font-unbounded font-bold text-lg">735-491-129</span>
+                            <span className="text-sm text-clr-dark/80">Zadzwoń teraz</span>
+                          </div>
+                        </Card>
+                      </a>
+                      
+                      <Link href="/#contact-section">
+                        <Card className="bg-gray-50 rounded-2xl p-6 border border-clr-accent shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                          <div className="flex flex-col items-center text-center">
+                            <ArrowRightIcon className="h-8 w-8 mb-3 text-clr-dark" />
+                            <span className="font-unbounded font-bold text-lg text-clr-dark">Formularz</span>
+                            <span className="text-sm text-clr-dark/80">Napisz do mnie</span>
+                          </div>
+                        </Card>
+                      </Link>
                     </div>
                   </div>
-                </Card>
-              </a>
-              
-              <Link href="/#contact-section">
-                <Card className="bg-gray-50 rounded-xl p-6 border border-clr-accent shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex items-center justify-center gap-3">
-                    <ArrowRightIcon className="h-6 w-6 text-clr-dark" />
-                    <div className="text-center">
-                      <div className="font-unbounded font-bold text-lg text-clr-dark">Formularz</div>
-                      <div className="text-sm text-clr-dark/80">Napisz do mnie</div>
+
+                  {/* Right Column - Image */}
+                  <div className="relative order-1 lg:order-2">
+                    <div className="relative aspect-[4/3] sm:aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden">
+                      <Image
+                        src="/hero_PHOTO.jpg"
+                        alt="Naprawa protez zębowych dla mieszkańców Złotowa - Pracownia Protetyki Stomatologicznej Zakrzewo"
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
                     </div>
                   </div>
-                </Card>
-              </Link>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            {/* Services Section */}
-            <section className="mb-12">
-              <h2 className="font-unbounded font-bold text-2xl text-clr-dark mb-6">
-                Usługi naprawy protez dla mieszkańców Złotowa
-              </h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Pęknięta proteza (obsługa Złotów)
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Pękniętą protezę naprawiam szybko i precyzyjnie. Stosuję nowoczesne techniki, by zapewnić trwałość. 
-                    Twoja proteza odzyska dawną funkcjonalność w ciągu jednej wizyty.
+        {/* Services Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+                <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                  <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
+                    Usługi naprawy protez dla Złotowa
+                  </h2>
+                  <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed">
+                    Kompleksowa obsługa wszystkich problemów z protezami zębowymi
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Luźna proteza (obsługa Złotów)
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Luźną protezę precyzyjnie dopasowuję, by poprawić komfort noszenia. Eliminuję dyskomfort i ryzyko otarć dziąseł. 
-                    Znów poczujesz się swobodnie podczas mówienia i jedzenia.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Zużyta proteza (obsługa Złotów)
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Zużytą protezę profesjonalnie odnawiam – poleruję, wymieniam elementy i poprawiam estetykę. 
-                    Odzyskasz sprawność i estetyczny wygląd bez konieczności wymiany.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Przebarwienia protezy (obsługa Złotów)
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Usuwam przebarwienia protezy za pomocą profesjonalnego piaskowania i dezynfekcji. 
-                    Twoja proteza znów będzie czysta i estetyczna.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Wypadł ząb z protezy (obsługa Złotów)
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Ząb wypadł z protezy? Błyskawicznie uzupełniam brakujące elementy, zapewniając estetykę i funkcjonalność. 
-                    Przywracam wygodę użytkowania już tego samego dnia.
-                  </p>
+                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  {services.map((service, index) => (
+                    <Card key={index} className="bg-gray-50 border border-gray-200 p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200" style={{ borderRadius: '16px' }}>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-clr-dark text-white mx-auto">
+                          {service.icon}
+                        </div>
+                        <h3 className="font-unbounded font-bold text-base text-clr-dark text-center">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-clr-dark/70 leading-relaxed text-center">
+                          {service.description}
+                        </p>
+                        <div className="text-center">
+                          <Button className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-white transition-all duration-200 rounded-full px-4 py-2 text-sm font-medium">
+                            Umów wizytę
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
                 </div>
               </div>
-            </section>
+            </div>
+          </div>
+        </section>
 
-            {/* Process Section */}
-            <section className="mb-12">
-              <h2 className="font-unbounded font-bold text-2xl text-clr-dark mb-6">
-                Jak to działa?
-              </h2>
-              
-              <div className="bg-gray-50 rounded-xl p-6">
-                <ol className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-clr-dark text-white text-sm font-bold flex-shrink-0 mt-0.5">1</span>
-                    <div>
-                      <strong>Zgłoszenie:</strong> Zadzwoń lub napisz.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-clr-dark text-white text-sm font-bold flex-shrink-0 mt-0.5">2</span>
-                    <div>
-                      <strong>Wysyłka/Odbiór:</strong> Wyślij protezę kurierem lub umów odbiór osobisty.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-clr-dark text-white text-sm font-bold flex-shrink-0 mt-0.5">3</span>
-                    <div>
-                      <strong>Naprawa w 24 h:</strong> Szybka, fachowa naprawa.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-clr-dark text-white text-sm font-bold flex-shrink-0 mt-0.5">4</span>
-                    <div>
-                      <strong>Doręczenie:</strong> Proteza wraca kurierem lub odbierasz ją osobiście.
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </section>
-
-            {/* Pricing Section */}
-            <section className="mb-12">
-              <h2 className="font-unbounded font-bold text-2xl text-clr-dark mb-6">
-                Cennik naprawy protez
-              </h2>
-              
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="border-b-2 border-gray-200">
-                      <th className="text-left py-3 px-4 font-unbounded font-bold text-clr-dark">Usługa</th>
-                      <th className="text-left py-3 px-4 font-unbounded font-bold text-clr-dark">Czas</th>
-                      <th className="text-left py-3 px-4 font-unbounded font-bold text-clr-dark">Cena</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-3 px-4 text-clr-dark">Naprawa pękniętej protezy</td>
-                      <td className="py-3 px-4 text-clr-dark/70">1–2 godz.</td>
-                      <td className="py-3 px-4 text-clr-dark font-medium">od 120 zł</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-3 px-4 text-clr-dark">Dopasowanie luźnej protezy</td>
-                      <td className="py-3 px-4 text-clr-dark/70">1–2 godz.</td>
-                      <td className="py-3 px-4 text-clr-dark font-medium">od 120 zł</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-3 px-4 text-clr-dark">Renowacja zużytej protezy</td>
-                      <td className="py-3 px-4 text-clr-dark/70">2–3 godz.</td>
-                      <td className="py-3 px-4 text-clr-dark font-medium">od 120 zł</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-3 px-4 text-clr-dark">Czyszczenie przebarwień</td>
-                      <td className="py-3 px-4 text-clr-dark/70">1 godz.</td>
-                      <td className="py-3 px-4 text-clr-dark font-medium">od 120 zł</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 px-4 text-clr-dark">Uzupełnienie wypadłego zęba</td>
-                      <td className="py-3 px-4 text-clr-dark/70">1–2 godz.</td>
-                      <td className="py-3 px-4 text-clr-dark font-medium">od 120 zł</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="mb-12">
-              <h2 className="font-unbounded font-bold text-2xl text-clr-dark mb-6">
-                Najczęściej zadawane pytania
-              </h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Ile trwa naprawa protezy?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Naprawa protezy trwa zwykle od 1 do 2 godzin. Ekspresowa usługa możliwa nawet tego samego dnia.
-                  </p>
+        {/* Process Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+                <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                  <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
+                    Jak to działa?
+                  </h2>
                 </div>
 
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Czy NFZ refunduje naprawę protez?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Tak, naprawa protez może być dofinansowana przez NFZ. Warunki refundacji zależą od typu protezy.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Czy każdą protezę można naprawić?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Większość protez można skutecznie naprawić. W wyjątkowych sytuacjach może być konieczna wymiana.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Ile kosztuje naprawa protezy w Złotowie?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Koszt naprawy protezy zaczyna się od 120 zł, w zależności od rodzaju usługi i zakresu prac.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Czy mogę wysłać protezę kurierem?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Tak, istnieje możliwość wysłania protezy kurierem. Proszę wcześniej o kontakt telefoniczny.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-unbounded font-bold text-lg text-clr-dark mb-2">
-                    Czy muszę przyjechać do Zakrzewa?
-                  </h3>
-                  <p className="text-clr-dark/80 leading-relaxed">
-                    Nie, możliwa jest wysyłka protezy kurierem lub umówiony odbiór po wcześniejszym kontakcie.
-                  </p>
+                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                  {processSteps.map((step, index) => (
+                    <Card key={index} className="bg-clr-accent/10 border border-clr-accent/20 p-6 text-center" style={{ borderRadius: '16px' }}>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-clr-dark text-white mx-auto font-bold">
+                          {index + 1}
+                        </div>
+                        <p className="text-sm text-clr-dark font-medium leading-relaxed">
+                          {step}
+                        </p>
+                      </div>
+                    </Card>
+                  ))}
                 </div>
               </div>
-            </section>
+            </div>
+          </div>
+        </section>
 
-            {/* Final CTA */}
-            <section className="text-center">
-              <div className="bg-clr-accent rounded-xl p-8 mb-8">
-                <h2 className="font-unbounded font-bold text-2xl text-clr-dark mb-4">
+        {/* Pricing Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+                <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                  <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
+                    Cennik naprawy protez
+                  </h2>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-4 px-4 font-unbounded font-bold text-clr-dark">Usługa</th>
+                        <th className="text-left py-4 px-4 font-unbounded font-bold text-clr-dark">Czas</th>
+                        <th className="text-left py-4 px-4 font-unbounded font-bold text-clr-dark">Cena</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {pricingData.map((item, index) => (
+                        <tr key={index} className="border-b border-gray-100">
+                          <td className="py-4 px-4 text-clr-dark">{item.service}</td>
+                          <td className="py-4 px-4 text-clr-dark/70">{item.time}</td>
+                          <td className="py-4 px-4 text-clr-dark font-medium">{item.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+                <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                  <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
+                    Najczęściej zadawane pytania
+                  </h2>
+                </div>
+
+                <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+                  {faqData.map((faq, index) => (
+                    <Card key={index} className="bg-gray-50 border border-gray-200 p-6" style={{ borderRadius: '16px' }}>
+                      <div className="space-y-3">
+                        <h3 className="font-unbounded font-bold text-base text-clr-dark">
+                          {faq.question}
+                        </h3>
+                        <p className="text-sm text-clr-dark/70 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-clr-accent rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm text-center">
+                <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
                   Zadzwoń teraz: 735-491-129
                 </h2>
-                <p className="text-lg text-clr-dark/80 mb-6">
+                <p className="text-base sm:text-lg text-clr-dark/80 mb-6 sm:mb-8">
                   Szybka pomoc dla mieszkańców Złotowa
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a href="tel:+48735491129">
                     <Button className="bg-clr-dark text-white hover:bg-white hover:text-clr-dark transition-all duration-200 rounded-full px-8 py-3 font-unbounded font-bold">
                       <PhoneIcon className="h-5 w-5 mr-2" />
@@ -427,20 +463,26 @@ export default function NaprawaProtezZlotowPage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              {/* Internal Link */}
-              <div className="text-center">
+        {/* Internal Link Section */}
+        <section className="py-8 bg-clr-gray">
+          <div className="w-full px-6 lg:px-8">
+            <div className="w-full max-w-[1200px] mx-auto">
+              <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm text-center">
+                <h3 className="font-unbounded font-bold text-xl text-clr-dark mb-4">
+                  Zobacz również
+                </h3>
                 <Link href="/" className="inline-flex items-center text-clr-accent hover:text-clr-dark transition-colors font-medium">
-                  Zobacz również: Strona główna - Pracownia Protetyki Stomatologicznej
+                  Strona główna - Pracownia Protetyki Stomatologicznej
                   <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </Link>
               </div>
-            </section>
-
-              </article>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </>
   );
