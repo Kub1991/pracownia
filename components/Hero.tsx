@@ -41,7 +41,7 @@ export default function Hero() {
                           Kliknij i Zadzwoń
                         </h3>
                         <span className="font-unbounded font-bold text-sm sm:text-base lg:text-lg hidden lg:block">
-                          735-491-129
+                          735 491 129
                         </span>
                       </div>
                     </Card>

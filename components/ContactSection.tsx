@@ -167,7 +167,7 @@ export default function ContactSection() {
                       Zadzwoń Teraz!
                     </h3>
                     <div className="font-unbounded font-bold text-2xl sm:text-3xl mb-3 sm:mb-4">
-                      735-491-129
+                      735 491 129
                     </div>
                     <p className="text-clr-dark/80 text-xs sm:text-sm">
                       Najszybszy sposób na uzyskanie pomocy
@@ -211,7 +211,7 @@ export default function ContactSection() {
                   {submitStatus === 'error' && (
                     <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-100 border border-red-300 rounded-xl">
                       <p className="text-red-800 text-sm sm:text-base font-medium text-center">
-                        ❌ Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń: 735-491-129
+                        ❌ Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń: 735 491 129
                       </p>
                     </div>
                   )}

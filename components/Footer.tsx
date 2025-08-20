@@ -48,9 +48,9 @@ export default function Footer() {
                 <div>
                   <p className="text-white font-medium text-sm sm:text-base">Adres:</p>
                   <p className="text-white/80 text-sm sm:text-base">
-                    ul. E. J, Osmańczyka 18<br />
+                    ul. E. J. Osmańczyka 18<br />
                     77-424 Zakrzewo<br />
-                    woj. wielkopolskie
+                    wielkopolskie, PL
                   </p>
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function Footer() {
                 <div>
                   <p className="text-white font-medium text-sm sm:text-base">Telefon:</p>
                   <a href="tel:+48735491129" className="text-clr-accent hover:text-white transition-colors text-sm sm:text-base">
-                    735-491-129
+                    735 491 129
                   </a>
                 </div>
               </div>

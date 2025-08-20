@@ -61,11 +61,11 @@ export default function RootLayout({
               "alternateName": "Protetyka Stomatologiczna Zakrzewo",
               "description": "Profesjonalna pracownia protetyki stomatologicznej oferująca szybką naprawę protez w Zakrzewie i okolicach. Naprawa nawet w 24 godziny.",
               "url": "https://protetyka-zakrzewo.pl",
-              "telephone": "+48667289807",
+              "telephone": "+48735491129",
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "ul. E. J, Osmańczyka 18",
+                "streetAddress": "ul. E. J. Osmańczyka 18",
                 "addressLocality": "Zakrzewo",
                 "postalCode": "77-424",
                 "addressRegion": "wielkopolskie",

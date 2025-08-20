@@ -123,7 +123,7 @@ export default function ProblemSection() {
                   Zadzwoń Teraz!
                 </h3>
                 <span className="font-unbounded font-bold text-base sm:text-lg lg:text-xl">
-                  735-491-129
+                  735 491 129
                 </span>
               </div>
               </Card>
