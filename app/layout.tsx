@@ -121,6 +121,23 @@ export default function RootLayout({
                 },
                 "geoRadius": "50000"
               },
+              "areaServed": [
+                "Zakrzewo",
+                "Złotów", 
+                "Jastrowie",
+                "Krajenka",
+                "Okonek",
+                "Więcbork",
+                "Sępólno Krajeńskie",
+                "Piła",
+                "Debrzno",
+                "Człuchów",
+                "Wysoka",
+                "Lipka",
+                "Tarnówka",
+                "Łobżenica",
+                "Koczala"
+              ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Usługi Protetyki Stomatologicznej",
