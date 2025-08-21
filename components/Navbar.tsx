@@ -13,6 +13,7 @@ const navLinks = [
   { name: 'Proces', href: '#process-section', id: 'process-section' },
   { name: 'Obszar', href: '#areas-served', id: 'areas-served' },
   { name: 'Opinie', href: '#testimonials-section', id: 'testimonials-section' },
+  { name: 'FAQ', href: '#faq', id: 'faq' },
   { name: 'Kontakt', href: '#contact-section', id: 'contact-section' },
 ];
 

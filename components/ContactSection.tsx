@@ -331,6 +331,15 @@ export default function ContactSection() {
                           Szybka odpowiedź gwarantowana
                         </p>
                       </div>
+                      
+                      <div className="mt-4 sm:mt-6">
+                        <a 
+                          href="#faq" 
+                          className="text-clr-dark/70 hover:text-clr-accent transition-colors text-xs sm:text-sm underline underline-offset-2"
+                        >
+                          Masz pytania? Zobacz FAQ ↓
+                        </a>
+                      </div>
                       </div>
                     )}
                   </form>

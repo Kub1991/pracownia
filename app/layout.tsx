@@ -180,6 +180,49 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Ile trwa naprawa protezy?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zwykle do 24 godzin. W pilnych przypadkach możliwy szybszy termin po uzgodnieniu telefonicznie."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Czy wykonujecie naprawy ekspresowe?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak, w nagłych przypadkach możliwe są naprawy ekspresowe tego samego dnia. Najszybciej ustalisz szczegóły, dzwoniąc pod numer 735 491 129."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Jaki jest koszt naprawy?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zależy od rodzaju uszkodzenia. Po krótkiej konsultacji podaję widełki ceny oraz termin."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Czy naprawiacie na miejscu, czy muszę zostawić protezę?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "W większości przypadków proteza zostaje w pracowni na czas naprawy. To skraca termin i podnosi jakość wykonania."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${unbounded.variable} font-inter bg-clr-gray`}>
         <ScrollProvider>
