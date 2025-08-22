@@ -11,7 +11,7 @@ import { useScroll } from '@/contexts/ScrollContext';
 const navLinks = [
   { name: 'Problemy', href: '#problem-section', id: 'problem-section' },
   { name: 'Proces', href: '#process-section', id: 'process-section' },
-  { name: 'Dojazd', href: '#areas-served', id: 'areas-served' },
+  { name: 'Obszar', href: '#areas-served', id: 'areas-served' },
   { name: 'Opinie', href: '#testimonials-section', id: 'testimonials-section' },
   { name: 'FAQ', href: '#faq', id: 'faq' },
   { name: 'Kontakt', href: '#contact-section', id: 'contact-section' },
