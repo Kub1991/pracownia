@@ -51,11 +51,14 @@ export default function AreasServed() {
             </Card>
 
             {/* Additional Info */}
-            <div className="text-center mt-6 sm:mt-8">
+              Pacjenci przyjeżdżają z
               <p className="text-sm sm:text-base text-clr-dark/70">
-                Nie widzisz swojej miejscowości? <span className="font-medium text-clr-dark">Zadzwoń - sprawdzimy możliwość dojazdu!</span>
-              </p>
+            <p className="text-sm sm:text-base text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+              Przyjmuję wyłącznie w pracowni w Zakrzewie. Poniżej miejscowości, z których najczęściej do mnie dojeżdżacie.
             </div>
+            <p className="text-xs sm:text-sm text-clr-dark/60 mt-1 max-w-2xl mx-auto px-4 sm:px-0">
+              Brak dojazdów do domu — naprawy wykonuję na miejscu w pracowni.
+            </p>
           </div>
         </div>
       </div>
