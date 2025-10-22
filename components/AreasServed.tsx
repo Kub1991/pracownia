@@ -29,10 +29,10 @@ export default function AreasServed() {
             {/* Section Header */}
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
               <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
-                Obsługuję miejscowości
+                Pacjenci odwiedzają mnie z tych miejscowości
               </h2>
               <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                Zakrzewo i okolica - dojazd po uzgodnieniu. Szybka pomoc w naprawie protez na terenie całego regionu.
+                Moja pracownia w Zakrzewie to punkt, do którego najczęściej przyjeżdżają pacjenci z poniższych miejscowości, szukający szybkiej i profesjonalnej naprawy protez.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function AreasServed() {
             {/* Additional Info */}
             <div className="text-center mt-6 sm:mt-8">
               <p className="text-sm sm:text-base text-clr-dark/70">
-                Nie widzisz swojej miejscowości? <span className="font-medium text-clr-dark">Zadzwoń - sprawdzimy możliwość dojazdu!</span>
+                Nie widzisz swojej miejscowości? <span className="font-medium text-clr-dark">Zadzwoń - chętnie odpowiem na Twoje pytania!</span>
               </p>
             </div>
           </div>
