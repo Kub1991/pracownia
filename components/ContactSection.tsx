@@ -91,6 +91,7 @@ export default function ContactSection() {
       };
 
       const response = await fetch('https://hook.eu2.make.com/eon9x3dqgv1bj83fo6hft8qtca2f4y5t', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -137,6 +138,7 @@ export default function ContactSection() {
       return () => clearTimeout(timer);
     }
   });
+
   return (
     <section id="contact-section" className="py-2 bg-clr-gray">
       <div className="w-full px-6 lg:px-8">
