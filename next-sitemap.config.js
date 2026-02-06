@@ -7,7 +7,7 @@ module.exports = {
   sitemapSize: 7000,
   changefreq: 'weekly',
   priority: 0.7,
-  exclude: ['/api/*', '/admin/*', '/_next/*'],
+  exclude: ['/api/*', '/admin/*', '/_next/*', '/robots.txt', '/sitemap.xml', '/sitemap-*.xml', '/_not-found'],
   
   // Custom transformation for specific pages
   transform: async (config, path) => {
