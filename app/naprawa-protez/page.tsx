@@ -2,10 +2,21 @@
 import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
 
+const LOCATION_LINKS = [
+  { slug: 'pila', label: 'Piła' },
+  { slug: 'zlotow', label: 'Złotów' },
+  { slug: 'czluchow', label: 'Człuchów' },
+  { slug: 'wiecbork', label: 'Więcbork' },
+  { slug: 'sepolno-krajenskie', label: 'Sępólno Krajeńskie' },
+  { slug: 'jastrowie', label: 'Jastrowie' },
+  { slug: 'krajenka', label: 'Krajenka' },
+  { slug: 'okonek', label: 'Okonek' },
+] as const;
+
 export const metadata: Metadata = {
-  title: 'Naprawa protez Zakrzewo | Protetyka - Karolina Szymańska',
+  title: 'Naprawa protez Zakrzewo i okolice | Szybki termin',
   description:
-    'Naprawa protez zębowych w Zakrzewie i okolicach. Szybka ocena, naprawy często w 24h. Zadzwoń i umów termin.',
+    'Naprawa protez zębowych dla pacjentów z Piły, Złotowa, Człuchowa, Więcborka i okolic. Szybka ocena problemu i jasny plan działania.',
   alternates: {
     canonical: '/naprawa-protez',
   },
@@ -64,6 +75,21 @@ export default function NaprawaProtezPage() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+              Informacje przed wizytą
+            </h2>
+            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+              <li>W pierwszym kontakcie opisz, czy uszkodzenie jest świeże, czy narastało stopniowo.</li>
+              <li>Na wizytę zabierz protezę i wszystkie odłączone elementy, jeśli takie są.</li>
+              <li>Po naprawie obserwuj komfort i zgłoś od razu nowe punkty ucisku.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
+            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
               FAQ - naprawa protez
             </h2>
             <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
@@ -91,9 +117,15 @@ export default function NaprawaProtezPage() {
               Lokalne strony usługi
             </h2>
             <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-              <Link href="/naprawa-protez/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Piła</Link>
-              <Link href="/naprawa-protez/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Złotów</Link>
-              <Link href="/naprawa-protez/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Człuchów</Link>
+              {LOCATION_LINKS.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/naprawa-protez/${city.slug}`}
+                  className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                >
+                  Naprawa protez {city.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

@@ -2,10 +2,21 @@
 import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
 
+const LOCATION_LINKS = [
+  { slug: 'pila', label: 'Piła' },
+  { slug: 'zlotow', label: 'Złotów' },
+  { slug: 'czluchow', label: 'Człuchów' },
+  { slug: 'wiecbork', label: 'Więcbork' },
+  { slug: 'sepolno-krajenskie', label: 'Sępólno Krajeńskie' },
+  { slug: 'jastrowie', label: 'Jastrowie' },
+  { slug: 'krajenka', label: 'Krajenka' },
+  { slug: 'okonek', label: 'Okonek' },
+] as const;
+
 export const metadata: Metadata = {
-  title: 'Protezy zębowe Zakrzewo | Protetyka - Karolina Szymańska',
+  title: 'Protezy zębowe Zakrzewo i okolice | Komfort na co dzień',
   description:
-    'Protezy zębowe w Zakrzewie i okolicach. Dobór i wykonanie rozwiązań protetycznych dopasowanych do Twoich potrzeb.',
+    'Protezy zębowe dla pacjentów z Piły, Złotowa, Człuchowa, Więcborka i okolic. Dobór rozwiązania, wykonanie i kontrola komfortu.',
   alternates: {
     canonical: '/protezy-zebowe',
   },
@@ -64,6 +75,21 @@ export default function ProtezyZebowePage() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+              Jak przygotować się do wizyty
+            </h2>
+            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+              <li>Przed wizytą zapisz, które sytuacje są najbardziej niewygodne podczas noszenia protezy.</li>
+              <li>Jeśli używasz obecnie protezy, zabierz ją i opowiedz, co wymaga poprawy.</li>
+              <li>Na konsultacji ustalimy plan, który łączy estetykę z codziennym komfortem.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
+            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
               FAQ - protezy zębowe
             </h2>
             <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
@@ -91,9 +117,15 @@ export default function ProtezyZebowePage() {
               Lokalne strony usługi
             </h2>
             <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-              <Link href="/protezy-zebowe/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Piła</Link>
-              <Link href="/protezy-zebowe/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Złotów</Link>
-              <Link href="/protezy-zebowe/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Człuchów</Link>
+              {LOCATION_LINKS.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/protezy-zebowe/${city.slug}`}
+                  className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                >
+                  Protezy zębowe {city.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

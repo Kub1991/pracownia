@@ -2,9 +2,21 @@
 import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
 
+const LOCATION_LINKS = [
+  { slug: 'pila', label: 'Piła' },
+  { slug: 'zlotow', label: 'Złotów' },
+  { slug: 'czluchow', label: 'Człuchów' },
+  { slug: 'wiecbork', label: 'Więcbork' },
+  { slug: 'sepolno-krajenskie', label: 'Sępólno Krajeńskie' },
+  { slug: 'jastrowie', label: 'Jastrowie' },
+  { slug: 'krajenka', label: 'Krajenka' },
+  { slug: 'okonek', label: 'Okonek' },
+] as const;
+
 export const metadata: Metadata = {
-  title: 'Dopasowanie protez Zakrzewo | Protetyka - Karolina Szymańska',
-  description: 'Dopasowanie i korekta protez w Zakrzewie. Poprawa stabilności, komfortu i funkcji zgryzu.',
+  title: 'Dopasowanie protez Zakrzewo i okolice | Większa stabilność',
+  description:
+    'Dopasowanie i korekta protez dla pacjentów z Piły, Złotowa, Człuchowa, Więcborka i okolic. Poprawa komfortu i stabilności noszenia.',
   alternates: {
     canonical: '/dopasowanie-protez',
   },
@@ -63,6 +75,21 @@ export default function DopasowanieProtezPage() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+              Co poprawiamy podczas dopasowania
+            </h2>
+            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+              <li>stabilność protezy podczas mówienia, jedzenia i codziennych aktywności</li>
+              <li>punkty ucisku powodujące otarcia i przeciążenie tkanek</li>
+              <li>komfort użytkowania po dłuższym okresie noszenia</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
+            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
               FAQ - dopasowanie protez
             </h2>
             <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
@@ -90,9 +117,15 @@ export default function DopasowanieProtezPage() {
               Lokalne strony usługi
             </h2>
             <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-              <Link href="/dopasowanie-protez/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Dopasowanie protez Piła</Link>
-              <Link href="/dopasowanie-protez/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Dopasowanie protez Złotów</Link>
-              <Link href="/dopasowanie-protez/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Dopasowanie protez Człuchów</Link>
+              {LOCATION_LINKS.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/dopasowanie-protez/${city.slug}`}
+                  className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                >
+                  Dopasowanie protez {city.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

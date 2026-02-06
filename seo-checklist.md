@@ -25,9 +25,9 @@
 - [ ] Reindeksacja przez GSC
 
 ## Sprint 3: Rozszerzenie zasiegu
-- [ ] Opublikowac 20 stron lokalnych (Wiecbork, Sepolno Krajenskie, Jastrowie, Krajenka, Okonek x 4 uslugi)
-- [ ] Rozbudowac FAQ i tresci informacyjne
-- [ ] Pierwsza iteracja CTR (title/description)
+- [x] Opublikowac 20 stron lokalnych (Wiecbork, Sepolno Krajenskie, Jastrowie, Krajenka, Okonek x 4 uslugi)
+- [x] Rozbudowac FAQ i tresci informacyjne (FAQ bez zmian zgodnie z decyzja, rozbudowane tresci informacyjne)
+- [x] Pierwsza iteracja CTR (title/description)
 
 ## Sprint 4: Domkniecie klastra
 - [ ] Opublikowac pozostale 24 strony lokalne
