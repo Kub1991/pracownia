@@ -17,8 +17,9 @@ export default function Home() {
       <TestimonialsSection />
 
       <section className="py-8 bg-clr-gray">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
+        <div className="w-full px-6 lg:px-8">
+          <div className="w-full max-w-[1200px] mx-auto">
+            <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-2xl sm:text-3xl text-clr-dark mb-4">
               Usługi protetyczne
             </h2>
@@ -70,6 +71,7 @@ export default function Home() {
                   Ocena sytuacji i jasne zalecenia dalszych kroków.
                 </p>
               </Link>
+            </div>
             </div>
           </div>
         </div>
