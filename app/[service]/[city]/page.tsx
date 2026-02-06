@@ -36,7 +36,7 @@ const CITIES: Record<string, string> = {
   krajenka: 'Krajenka',
   okonek: 'Okonek',
   wiecbork: 'Wiecbork',
-  sepolno-krajenskie: 'Sepolno Krajenskie',
+  'sepolno-krajenskie': 'Sepolno Krajenskie',
   pila: 'Pila',
   debrzno: 'Debrzno',
   czluchow: 'Czluchow',
