@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ScrollProvider } from '@/contexts/ScrollContext';
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-E1QBMV9JPX';
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-KRQZWQSBPP';
 const ENABLE_GA = process.env.NODE_ENV === 'production';
 
 const inter = Inter({ 
