@@ -262,6 +262,9 @@ export default function LocationServicePage({
   const relatedCities = (Object.keys(CITIES) as CitySlug[])
     .filter((slug) => slug !== params.city)
     .slice(0, 6);
+  const relatedServices = (Object.keys(SERVICES) as ServiceSlug[]).filter(
+    (slug) => slug !== params.service
+  );
   const serviceHubPath = SERVICE_HUB_PATHS[params.service];
 
   return (
@@ -315,6 +318,21 @@ export default function LocationServicePage({
               </div>
 
               <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Powiązane usługi w {city.locative}
+                </h2>
+                <div className="flex flex-wrap gap-2 text-sm sm:text-base mb-8">
+                  {relatedServices.map((serviceSlug) => (
+                    <Link
+                      key={serviceSlug}
+                      href={`/${serviceSlug}/${params.city}`}
+                      className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                    >
+                      {SERVICES[serviceSlug].name} {city.nominative}
+                    </Link>
+                  ))}
+                </div>
+
                 <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
                   Strona główna usługi
                 </h2>
