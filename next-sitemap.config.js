@@ -2,6 +2,7 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://protetyka-zakrzewo.pl',
   generateRobotsTxt: false,
+  generateIndexSitemap: false,
   outDir: 'out',
   sitemapSize: 7000,
   changefreq: 'weekly',
