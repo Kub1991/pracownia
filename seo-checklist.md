@@ -1,4 +1,4 @@
-# SEO Checklist (Sprint 1+)
+﻿# SEO Checklist (Sprint 1+)
 
 ## Sprint 1: Fundament techniczny
 - [x] Usunac lazy-loading kluczowych sekcji (render tresci w HTML)
@@ -20,8 +20,8 @@
 
 ## Sprint 2: MVP lokalny
 - [x] Opublikowac 4 strony uslugowe
-- [ ] Opublikowac 12 stron lokalnych (Pila, Zlotow, Człuchow x 4 uslugi)
-- [ ] Linkowanie wewnetrzne hub <-> strony lokalne
+- [x] Opublikowac 12 stron lokalnych (Pila, Zlotow, Czluchow x 4 uslugi)
+- [x] Linkowanie wewnetrzne hub <-> strony lokalne
 - [ ] Reindeksacja przez GSC
 
 ## Sprint 3: Rozszerzenie zasiegu

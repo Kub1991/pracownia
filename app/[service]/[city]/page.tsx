@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
 
@@ -7,46 +7,42 @@ const SERVICES = {
     name: 'Naprawa protez',
     short: 'naprawa protez',
     description:
-      'Szybka pomoc przy pęknięciach, wypadnięciu zęba i luźnej protezie. Często możliwe naprawy w 24h.',
+      'Szybka pomoc przy peknieciach, wypadnieciu zeba i luznej protezie. Cesto mozliwe naprawy w 24h.',
   },
   'protezy-zebowe': {
-    name: 'Protezy zębowe',
-    short: 'protezy zębowe',
+    name: 'Protezy zebowe',
+    short: 'protezy zebowe',
     description:
-      'Dobór i wykonanie rozwiązań protetycznych dopasowanych do potrzeb, estetyki i komfortu.',
+      'Dobor i wykonanie rozwiazan protetycznych dopasowanych do potrzeb, estetyki i komfortu.',
   },
   'dopasowanie-protez': {
     name: 'Dopasowanie protez',
     short: 'dopasowanie protez',
     description:
-      'Korekta i dopasowanie, gdy proteza jest luźna, powoduje dyskomfort lub przesuwa się.',
+      'Korekta i dopasowanie, gdy proteza jest luzna, powoduje dyskomfort lub przesuwa sie.',
   },
   'konsultacje-protetyczne': {
     name: 'Konsultacje protetyczne',
     short: 'konsultacje protetyczne',
     description:
-      'Ocena sytuacji i plan dalszych kroków. Konkretne zalecenia i możliwe rozwiązania.',
+      'Ocena sytuacji i plan dalszych krokow. Konkretne zalecenia i mozliwe rozwiazania.',
   },
 } as const;
 
+type ServiceSlug = keyof typeof SERVICES;
+
 const CITIES: Record<string, string> = {
-  zakrzewo: 'Zakrzewo',
-  zlotow: 'Złotów',
-  jastrowie: 'Jastrowie',
-  krajenka: 'Krajenka',
-  okonek: 'Okonek',
-  wiecbork: 'Więcbork',
-  'sepolno-krajenskie': 'Sępólno Krajeńskie',
-  pila: 'Piła',
-  debrzno: 'Debrzno',
-  czluchow: 'Człuchów',
-  wysoka: 'Wysoka',
-  lipka: 'Lipka',
-  tarnowka: 'Tarnówka',
-  lobzenica: 'Łobżenica',
+  pila: 'Pila',
+  zlotow: 'Zlotow',
+  czluchow: 'Czluchow',
 };
 
-type ServiceSlug = keyof typeof SERVICES;
+const SERVICE_HUB_PATHS: Record<ServiceSlug, string> = {
+  'naprawa-protez': '/naprawa-protez',
+  'protezy-zebowe': '/protezy-zebowe',
+  'dopasowanie-protez': '/dopasowanie-protez',
+  'konsultacje-protetyczne': '/konsultacje-protetyczne',
+};
 
 export function generateStaticParams() {
   const services = Object.keys(SERVICES);
@@ -70,8 +66,8 @@ export function generateMetadata({
   }
 
   return {
-    title: `${service.name} ${city} | Protetyka – Karolina Szymańska`,
-    description: `${service.name} w ${city}. ${service.description} Umów termin w Zakrzewie.`,
+    title: `${service.name} ${city} | Protetyka - Karolina Szymanska`,
+    description: `${service.name} w ${city}. ${service.description} Umow termin w Zakrzewie.`,
     alternates: {
       canonical: `/${params.service}/${params.city}`,
     },
@@ -93,6 +89,7 @@ export default function LocationServicePage({
   const relatedCities = Object.keys(CITIES)
     .filter((slug) => slug !== params.city)
     .slice(0, 3);
+  const serviceHubPath = SERVICE_HUB_PATHS[params.service];
 
   return (
     <div className="bg-clr-gray">
@@ -100,11 +97,11 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 shadow-sm">
             <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4">
-              {service.name} – {city}
+              {service.name} - {city}
             </h1>
             <p className="text-base sm:text-lg text-clr-dark/80 max-w-3xl leading-relaxed">
-              {service.description} Obsługujemy pacjentów z {city} i okolic, a wizyty
-              realizujemy w Zakrzewie po wcześniejszym kontakcie.
+              {service.description} Obslugujemy pacjentow z {city} i okolic, a wizyty
+              realizujemy w Zakrzewie po wczesniejszym kontakcie.
             </p>
           </div>
         </div>
@@ -114,12 +111,12 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Najczęstsze sytuacje z {city}
+              Najczestsze sytuacje z {city}
             </h2>
             <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>nagła potrzeba pomocy z protezą przed ważnym wydarzeniem</li>
-              <li>dyskomfort przy jedzeniu lub mówieniu</li>
-              <li>problem z dopasowaniem po dłuższym użytkowaniu</li>
+              <li>nagla potrzeba pomocy z proteza przed waznym wydarzeniem</li>
+              <li>dyskomfort przy jedzeniu lub mowieniu</li>
+              <li>problem z dopasowaniem po dluzszym uzytkowaniu</li>
             </ul>
           </div>
         </div>
@@ -129,12 +126,12 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Jak wygląda proces
+              Jak wyglada proces
             </h2>
             <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
               <li>kontakt telefoniczny i opis problemu</li>
               <li>ustalenie terminu w Zakrzewie</li>
-              <li>wykonanie usługi i dopasowanie</li>
+              <li>wykonanie uslugi i dopasowanie</li>
               <li>zalecenia po wizycie</li>
             </ol>
           </div>
@@ -145,7 +142,20 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Powiązane lokalizacje
+              Strona glowna uslugi
+            </h2>
+            <p className="text-sm sm:text-base text-clr-dark/80 mb-4">
+              Zobacz pelny opis uslugi, FAQ i szczegoly na stronie glownej:
+            </p>
+            <Link
+              href={serviceHubPath}
+              className="inline-flex mb-8 px-4 py-2 rounded-full bg-clr-accent/30 hover:bg-clr-accent/40 text-clr-dark transition-colors"
+            >
+              {service.name} - Zakrzewo
+            </Link>
+
+            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+              Powiazane lokalizacje
             </h2>
             <div className="flex flex-wrap gap-2 text-sm sm:text-base">
               {relatedCities.map((slug) => (
