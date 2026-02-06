@@ -266,7 +266,7 @@ export default function LocationServicePage({
 
   return (
     <div className="bg-clr-gray">
-      <section className="pt-20 pb-8">
+      <section className="pt-20 pb-12">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 shadow-sm">
             <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4">
@@ -279,90 +279,76 @@ export default function LocationServicePage({
               {city.intro} Obsługujemy pacjentów z {city.from} i okolic, a wizyty
               realizujemy w Zakrzewie po wcześniejszym kontakcie.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="pb-8">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Najczęstsze potrzeby pacjentów w {city.locative}
-            </h2>
-            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              {city.localNeeds.map((need) => (
-                <li key={need}>{need}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+            <div className="mt-10 space-y-10">
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Najczęstsze potrzeby pacjentów w {city.locative}
+                </h2>
+                <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  {city.localNeeds.map((need) => (
+                    <li key={need}>{need}</li>
+                  ))}
+                </ul>
+              </div>
 
-      <section className="pb-8">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Na czym skupiamy się przy {service.short}
-            </h2>
-            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              {service.focusPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Na czym skupiamy się przy {service.short}
+                </h2>
+                <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  {service.focusPoints.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
 
-      <section className="pb-8">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Jak przygotować wizytę przy dojeździe z {city.from}
-            </h2>
-            <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              {city.planningTips.map((tip) => (
-                <li key={tip}>{tip}</li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Jak przygotować wizytę przy dojeździe z {city.from}
+                </h2>
+                <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  {city.planningTips.map((tip) => (
+                    <li key={tip}>{tip}</li>
+                  ))}
+                </ol>
+              </div>
 
-      <section className="pb-12">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Strona główna usługi
-            </h2>
-            <p className="text-sm sm:text-base text-clr-dark/80 mb-4">
-              Zobacz pełny opis usługi i zakres pomocy na stronie głównej:
-            </p>
-            <Link
-              href={serviceHubPath}
-              className="inline-flex mb-8 px-4 py-2 rounded-full bg-clr-accent/30 hover:bg-clr-accent/40 text-clr-dark transition-colors"
-            >
-              {service.name} - Zakrzewo
-            </Link>
-
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Powiązane lokalizacje
-            </h2>
-            <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-              {relatedCities.map((slug) => (
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Strona główna usługi
+                </h2>
+                <p className="text-sm sm:text-base text-clr-dark/80 mb-4">
+                  Zobacz pełny opis usługi i zakres pomocy na stronie głównej:
+                </p>
                 <Link
-                  key={slug}
-                  href={`/${params.service}/${slug}`}
-                  className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                  href={serviceHubPath}
+                  className="inline-flex mb-8 px-4 py-2 rounded-full bg-clr-accent/30 hover:bg-clr-accent/40 text-clr-dark transition-colors"
                 >
-                  {CITIES[slug].nominative}
+                  {service.name} - Zakrzewo
                 </Link>
-              ))}
+
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Powiązane lokalizacje
+                </h2>
+                <div className="flex flex-wrap gap-2 text-sm sm:text-base">
+                  {relatedCities.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`/${params.service}/${slug}`}
+                      className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                    >
+                      {CITIES[slug].nominative}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection showMap={false} />
     </div>
   );
 }

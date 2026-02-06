@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ProtezyZebowePage() {
   return (
     <div className="bg-clr-gray">
-      <section className="pt-20 pb-8">
+      <section className="pt-20 pb-12">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 shadow-sm">
             <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4">
@@ -35,103 +35,85 @@ export default function ProtezyZebowePage() {
               Oferuję kompleksową opiekę protetyczną - od konsultacji, przez dobór rozwiązania,
               po precyzyjne wykonanie i dopasowanie. Wszystko z myślą o komforcie i naturalnym wyglądzie.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="pb-8">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Kiedy warto rozważyć protezy zębowe
-            </h2>
-            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>braki zębowe utrudniające jedzenie lub mówienie</li>
-              <li>niewygodne dotychczasowe rozwiązanie</li>
-              <li>potrzeba poprawy estetyki uśmiechu</li>
-              <li>konieczność odbudowy funkcji zgryzu</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-8">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Proces wykonania i dopasowania
-            </h2>
-            <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>konsultacja i ocena potrzeb</li>
-              <li>dobór rozwiązania protetycznego</li>
-              <li>precyzyjne wykonanie i dopasowanie</li>
-              <li>kontrola komfortu i ewentualne korekty</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-12">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Jak przygotować się do wizyty
-            </h2>
-            <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>Przed wizytą zapisz, które sytuacje są najbardziej niewygodne podczas noszenia protezy.</li>
-              <li>Jeśli używasz obecnie protezy, zabierz ją i opowiedz, co wymaga poprawy.</li>
-              <li>Na konsultacji ustalimy plan, który łączy estetykę z codziennym komfortem.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-12">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              FAQ - protezy zębowe
-            </h2>
-            <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
+            <div className="mt-10 space-y-10">
               <div>
-                <p className="font-medium text-clr-dark">Czy protezy będą wygodne?</p>
-                <p>Tak, priorytetem jest komfort. Dopasowanie wykonuje się indywidualnie.</p>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Kiedy warto rozważyć protezy zębowe
+                </h2>
+                <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  <li>braki zębowe utrudniające jedzenie lub mówienie</li>
+                  <li>niewygodne dotychczasowe rozwiązanie</li>
+                  <li>potrzeba poprawy estetyki uśmiechu</li>
+                  <li>konieczność odbudowy funkcji zgryzu</li>
+                </ul>
               </div>
+
               <div>
-                <p className="font-medium text-clr-dark">Czy potrzebne są wizyty kontrolne?</p>
-                <p>Tak, pozwalają utrzymać wygodę i stabilność protezy.</p>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Proces wykonania i dopasowania
+                </h2>
+                <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  <li>konsultacja i ocena potrzeb</li>
+                  <li>dobór rozwiązania protetycznego</li>
+                  <li>precyzyjne wykonanie i dopasowanie</li>
+                  <li>kontrola komfortu i ewentualne korekty</li>
+                </ol>
               </div>
+
               <div>
-                <p className="font-medium text-clr-dark">Jak dbać o protezy?</p>
-                <p>Wszystkie zalecenia otrzymasz po wykonaniu - dopasowane do Twojej sytuacji.</p>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Jak przygotować się do wizyty
+                </h2>
+                <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  <li>Przed wizytą zapisz, które sytuacje są najbardziej niewygodne podczas noszenia protezy.</li>
+                  <li>Jeśli używasz obecnie protezy, zabierz ją i opowiedz, co wymaga poprawy.</li>
+                  <li>Na konsultacji ustalimy plan, który łączy estetykę z codziennym komfortem.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  FAQ - protezy zębowe
+                </h2>
+                <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
+                  <div>
+                    <p className="font-medium text-clr-dark">Czy protezy będą wygodne?</p>
+                    <p>Tak, priorytetem jest komfort. Dopasowanie wykonuje się indywidualnie.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-clr-dark">Czy potrzebne są wizyty kontrolne?</p>
+                    <p>Tak, pozwalają utrzymać wygodę i stabilność protezy.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-clr-dark">Jak dbać o protezy?</p>
+                    <p>Wszystkie zalecenia otrzymasz po wykonaniu - dopasowane do Twojej sytuacji.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Lokalne strony usługi
+                </h2>
+                <div className="flex flex-wrap gap-2 text-sm sm:text-base">
+                  {LOCATION_LINKS.map((city) => (
+                    <Link
+                      key={city.slug}
+                      href={`/protezy-zebowe/${city.slug}`}
+                      className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
+                    >
+                      Protezy zębowe {city.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="pb-12">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
-            <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Lokalne strony usługi
-            </h2>
-            <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-              {LOCATION_LINKS.map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/protezy-zebowe/${city.slug}`}
-                  className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
-                >
-                  Protezy zębowe {city.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContactSection />
+      <ContactSection showMap={false} />
     </div>
   );
 }

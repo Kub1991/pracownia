@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
@@ -21,17 +21,17 @@ const problemOptions = [
   {
     id: 'broken',
     icon: <ExclamationTriangleIcon className="h-5 w-5" />,
-    label: 'Pęknięta proteza'
+    label: 'PÄ™kniÄ™ta proteza'
   },
   {
     id: 'tooth-fell',
     icon: <WrenchScrewdriverIcon className="h-5 w-5" />,
-    label: 'Wypadł ząb z protezy'
+    label: 'WypadĹ‚ zÄ…b z protezy'
   },
   {
     id: 'loose',
     icon: <AdjustmentsHorizontalIcon className="h-5 w-5" />,
-    label: 'Proteza jest luźna'
+    label: 'Proteza jest luĹşna'
   },
   {
     id: 'discoloration',
@@ -41,7 +41,7 @@ const problemOptions = [
   {
     id: 'wear',
     icon: <SparklesIcon className="h-5 w-5" />,
-    label: 'Zużycie'
+    label: 'ZuĹĽycie'
   },
   {
     id: 'other',
@@ -50,7 +50,7 @@ const problemOptions = [
   }
 ];
 
-export default function ContactSection() {
+export default function ContactSection({ showMap = true }: { showMap?: boolean }) {
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     phone: '',
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 Potrzebujesz Pomocy? Jestem Blisko!
               </h2>
               <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                Skontaktuj się ze mną już dziś - pomogę rozwiązać problem z Twoją protezą
+                Skontaktuj siÄ™ ze mnÄ… juĹĽ dziĹ› - pomogÄ™ rozwiÄ…zaÄ‡ problem z TwojÄ… protezÄ…
               </p>
             </div>
 
@@ -165,20 +165,20 @@ export default function ContactSection() {
                       <PhoneIcon className="h-6 sm:h-8 w-6 sm:w-8" />
                     </div>
                     <h3 className="font-unbounded font-bold text-lg sm:text-xl mb-3 sm:mb-4">
-                      Zadzwoń Teraz!
+                      ZadzwoĹ„ Teraz!
                     </h3>
                     <div className="font-unbounded font-bold text-2xl sm:text-3xl mb-3 sm:mb-4">
                       735 491 129
                     </div>
                     <p className="text-clr-dark/80 text-xs sm:text-sm">
-                      Najszybszy sposób na uzyskanie pomocy
+                      Najszybszy sposĂłb na uzyskanie pomocy
                     </p>
                     </div>
                   </Card>
                 </a>
 
-                {/* Google Map */}
-                <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden">
+                {showMap && (
+                  <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.1582626101435!2d17.1516095!3d53.411995700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703cf2aafc11835%3A0x64a424f50f9471f2!2sPracownia%20Protetyki%20Stomatologicznej%20-%20Karolina%20Szyma%C5%84ska!5e0!3m2!1spl!2spl!4v1753817064223!5m2!1spl!2spl"
                     width="100%"
@@ -188,9 +188,10 @@ export default function ContactSection() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Lokalizacja Pracowni Protetyki Stomatologicznej - Karolina Szymańska"
+                    title="Lokalizacja Pracowni Protetyki Stomatologicznej - Karolina SzymaĹ„ska"
                   />
                 </Card>
+                )}
               </div>
 
               {/* Right Column - Contact Form */}
@@ -204,7 +205,7 @@ export default function ContactSection() {
                   {submitStatus === 'success' && (
                     <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-100 border border-green-300 rounded-xl">
                       <p className="text-green-800 text-sm sm:text-base font-medium text-center">
-                        ✅ Formularz został wysłany pomyślnie! Oddzwonię w ciągu 2 godzin.
+                        âś… Formularz zostaĹ‚ wysĹ‚any pomyĹ›lnie! OddzwoniÄ™ w ciÄ…gu 2 godzin.
                       </p>
                     </div>
                   )}
@@ -212,7 +213,7 @@ export default function ContactSection() {
                   {submitStatus === 'error' && (
                     <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-100 border border-red-300 rounded-xl">
                       <p className="text-red-800 text-sm sm:text-base font-medium text-center">
-                        ❌ Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń: 735 491 129
+                        âťŚ WystÄ…piĹ‚ bĹ‚Ä…d podczas wysyĹ‚ania. SprĂłbuj ponownie lub zadzwoĹ„: 735 491 129
                       </p>
                     </div>
                   )}
@@ -228,7 +229,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', e.target.value)}
                         className="w-full text-sm sm:text-base"
-                        placeholder="Podaj numer, żebym mogła oddzwonić"
+                        placeholder="Podaj numer, ĹĽebym mogĹ‚a oddzwoniÄ‡"
                         required
                         disabled={submitStatus === 'submitting'}
                       />
@@ -237,7 +238,7 @@ export default function ContactSection() {
                     {/* Problem Selection */}
                     <div>
                       <Label className="text-clr-dark font-medium mb-2 sm:mb-3 block text-sm sm:text-base">
-                        Jaki jest problem z protezą?
+                        Jaki jest problem z protezÄ…?
                       </Label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {problemOptions.map((problem) => (
@@ -283,7 +284,7 @@ export default function ContactSection() {
                         disabled={submitStatus === 'submitting'}
                       />
                       <p className="text-xs text-clr-dark/60 mt-1">
-                        Wybierz dogodny termin naprawy (najwcześniej jutro)
+                        Wybierz dogodny termin naprawy (najwczeĹ›niej jutro)
                       </p>
                     </div>
 
@@ -298,7 +299,7 @@ export default function ContactSection() {
                         disabled={submitStatus === 'submitting'}
                       />
                       <Label htmlFor="consent" className="text-xs sm:text-sm text-clr-dark/80 leading-relaxed cursor-pointer">
-                        Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie zgodnie z polityką prywatności.
+                        WyraĹĽam zgodÄ™ na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie zgodnie z politykÄ… prywatnoĹ›ci.
                       </Label>
                     </div>
 
@@ -307,17 +308,17 @@ export default function ContactSection() {
                       type="submit"
                       className="w-full bg-clr-dark text-white hover:bg-clr-accent hover:text-clr-dark transition-all duration-200 rounded-full py-3 font-unbounded font-bold text-sm sm:text-base hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={!formData.consent || submitStatus === 'submitting'}
-                      aria-label="Wyślij formularz kontaktowy"
+                      aria-label="WyĹ›lij formularz kontaktowy"
                     >
                       {submitStatus === 'submitting' ? (
                         <>
                           <div className="animate-spin rounded-full h-4 sm:h-5 w-4 sm:w-5 border-b-2 border-white mr-2"></div>
-                          Wysyłanie...
+                          WysyĹ‚anie...
                         </>
                       ) : (
                         <>
                           <PaperAirplaneIcon className="h-4 sm:h-5 w-4 sm:w-5 mr-2" />
-                          Wyślij Zapytanie
+                          WyĹ›lij Zapytanie
                         </>
                       )}
                     </Button>
@@ -326,10 +327,10 @@ export default function ContactSection() {
                       <div className="text-center">
                       <div className="bg-clr-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center">
                         <p className="text-clr-dark font-unbounded font-bold text-base sm:text-lg mb-1">
-                          ⏰ Oddzwonię w ciągu 2 godzin!
+                          âŹ° OddzwoniÄ™ w ciÄ…gu 2 godzin!
                         </p>
                         <p className="text-clr-dark/80 text-xs sm:text-sm">
-                          Szybka odpowiedź gwarantowana
+                          Szybka odpowiedĹş gwarantowana
                         </p>
                       </div>
                       
@@ -338,7 +339,7 @@ export default function ContactSection() {
                           href="#faq" 
                           className="text-clr-dark/70 hover:text-clr-accent transition-colors text-xs sm:text-sm underline underline-offset-2"
                         >
-                          Masz pytania? Zobacz FAQ ↓
+                          Masz pytania? Zobacz FAQ â†“
                         </a>
                       </div>
                       </div>
