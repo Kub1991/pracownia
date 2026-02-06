@@ -19,7 +19,7 @@
 - [x] Przygotowac szablon strony lokalnej (usluga -> lokalizacja)
 
 ## Sprint 2: MVP lokalny
-- [ ] Opublikowac 4 strony uslugowe
+- [x] Opublikowac 4 strony uslugowe
 - [ ] Opublikowac 12 stron lokalnych (Pila, Zlotow, Człuchow x 4 uslugi)
 - [ ] Linkowanie wewnetrzne hub <-> strony lokalne
 - [ ] Reindeksacja przez GSC
