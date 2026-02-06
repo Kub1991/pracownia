@@ -113,7 +113,8 @@ export default function ProtezyZebowePage() {
         </div>
       </section>
 
-      <ContactSection showMap={false} />
+      <ContactSection />
     </div>
   );
 }
+

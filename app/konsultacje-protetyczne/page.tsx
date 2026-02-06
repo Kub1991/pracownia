@@ -112,7 +112,8 @@ export default function KonsultacjeProtetycznePage() {
         </div>
       </section>
 
-      <ContactSection showMap={false} />
+      <ContactSection />
     </div>
   );
 }
+

@@ -348,7 +348,8 @@ export default function LocationServicePage({
         </div>
       </section>
 
-      <ContactSection showMap={false} />
+      <ContactSection />
     </div>
   );
 }
+

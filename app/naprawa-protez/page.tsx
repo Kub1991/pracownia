@@ -113,7 +113,8 @@ export default function NaprawaProtezPage() {
         </div>
       </section>
 
-      <ContactSection showMap={false} />
+      <ContactSection />
     </div>
   );
 }
+

@@ -113,7 +113,8 @@ export default function DopasowanieProtezPage() {
         </div>
       </section>
 
-      <ContactSection showMap={false} />
+      <ContactSection />
     </div>
   );
 }
+
