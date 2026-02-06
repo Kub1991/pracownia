@@ -1,9 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Unbounded } from 'next/font/google';
+import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ScrollProvider } from '@/contexts/ScrollContext';
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-E1QBMV9JPX';
+const ENABLE_GA = process.env.NODE_ENV === 'production';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -54,6 +58,22 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        {ENABLE_GA && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -116,8 +136,8 @@ export default function RootLayout({
                 "@type": "GeoCircle",
                 "geoMidpoint": {
                   "@type": "GeoCoordinates",
-                  "latitude": 52.7833,
-                  "longitude": 16.9167
+                  "latitude": 53.7833,
+                  "longitude": 17.9167
                 },
                 "geoRadius": "50000"
               },
