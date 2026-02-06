@@ -1,23 +1,24 @@
 ﻿'use client';
 
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 
-const AREAS_SERVED = [
-  'Zakrzewo',
-  'Złotów',
-  'Jastrowie',
-  'Krajenka',
-  'Okonek',
-  'Więcbork',
-  'Sępólno Krajeńskie',
-  'Piła',
-  'Debrzno',
-  'Człuchów',
-  'Wysoka',
-  'Lipka',
-  'Tarnówka',
-  'Łobżenica',
-  'Koczała',
+const AREAS_SERVED: Array<{ label: string; href?: string }> = [
+  { label: 'Zakrzewo' },
+  { label: 'Złotów', href: '/naprawa-protez/zlotow' },
+  { label: 'Jastrowie', href: '/naprawa-protez/jastrowie' },
+  { label: 'Krajenka', href: '/naprawa-protez/krajenka' },
+  { label: 'Okonek', href: '/naprawa-protez/okonek' },
+  { label: 'Więcbork', href: '/naprawa-protez/wiecbork' },
+  { label: 'Sępólno Krajeńskie', href: '/naprawa-protez/sepolno-krajenskie' },
+  { label: 'Piła', href: '/naprawa-protez/pila' },
+  { label: 'Debrzno' },
+  { label: 'Człuchów', href: '/naprawa-protez/czluchow' },
+  { label: 'Wysoka' },
+  { label: 'Lipka' },
+  { label: 'Tarnówka' },
+  { label: 'Łobżenica' },
+  { label: 'Koczała' },
 ];
 
 export default function AreasServed() {
@@ -40,10 +41,19 @@ export default function AreasServed() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 sm:gap-y-4">
                 {AREAS_SERVED.map((area) => (
                   <div
-                    key={area}
+                    key={area.label}
                     className="flex items-center text-sm sm:text-base text-clr-dark before:content-['•'] before:mr-2 sm:before:mr-3 before:opacity-60 before:text-clr-accent before:font-bold"
                   >
-                    {area}
+                    {area.href ? (
+                      <Link
+                        href={area.href}
+                        className="underline underline-offset-2 hover:text-clr-accent transition-colors"
+                      >
+                        {area.label}
+                      </Link>
+                    ) : (
+                      area.label
+                    )}
                   </div>
                 ))}
               </div>
