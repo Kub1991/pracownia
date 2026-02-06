@@ -1,23 +1,23 @@
-'use client';
+﻿'use client';
 
 import { Card } from '@/components/ui/card';
 
 const AREAS_SERVED = [
-  "Zakrzewo",
-  "Złotów", 
-  "Jastrowie",
-  "Krajenka",
-  "Okonek",
-  "Więcbork",
-  "Sępólno Krajeńskie",
-  "Piła",
-  "Debrzno",
-  "Człuchów",
-  "Wysoka",
-  "Lipka",
-  "Tarnówka",
-  "Łobżenica",
-  "Koczala"
+  'Zakrzewo',
+  'Złotów',
+  'Jastrowie',
+  'Krajenka',
+  'Okonek',
+  'Więcbork',
+  'Sępólno Krajeńskie',
+  'Piła',
+  'Debrzno',
+  'Człuchów',
+  'Wysoka',
+  'Lipka',
+  'Tarnówka',
+  'Łobżenica',
+  'Koczała',
 ];
 
 export default function AreasServed() {
@@ -26,22 +26,21 @@ export default function AreasServed() {
       <div className="w-full px-6 lg:px-8">
         <div className="w-full max-w-[1200px] mx-auto">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
-            {/* Section Header */}
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
               <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
                 Pacjenci odwiedzają mnie z tych miejscowości
               </h2>
               <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                Moja pracownia w Zakrzewie to punkt, do którego najczęściej przyjeżdżają pacjenci z poniższych miejscowości, szukający szybkiej i profesjonalnej naprawy protez.
+                Moja pracownia w Zakrzewie to punkt, do którego najczęściej przyjeżdżają pacjenci
+                z poniższych miejscowości, szukający szybkiej i profesjonalnej pomocy.
               </p>
             </div>
 
-            {/* Areas Grid */}
             <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-none">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 sm:gap-y-4">
-                {AREAS_SERVED.map((area, index) => (
-                  <div 
-                    key={index}
+                {AREAS_SERVED.map((area) => (
+                  <div
+                    key={area}
                     className="flex items-center text-sm sm:text-base text-clr-dark before:content-['•'] before:mr-2 sm:before:mr-3 before:opacity-60 before:text-clr-accent before:font-bold"
                   >
                     {area}
@@ -50,10 +49,10 @@ export default function AreasServed() {
               </div>
             </Card>
 
-            {/* Additional Info */}
             <div className="text-center mt-6 sm:mt-8">
               <p className="text-sm sm:text-base text-clr-dark/70">
-                Nie widzisz swojej miejscowości? <span className="font-medium text-clr-dark">Zadzwoń - chętnie odpowiem na Twoje pytania!</span>
+                Nie widzisz swojej miejscowości?{' '}
+                <span className="font-medium text-clr-dark">Zadzwoń - chętnie odpowiem na Twoje pytania!</span>
               </p>
             </div>
           </div>
