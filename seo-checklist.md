@@ -16,7 +16,7 @@
 
 ## Sprint 1: Baza pod skalowanie
 - [x] Przygotowac 4 strony uslugowe (huby)
-- [ ] Przygotowac szablon strony lokalnej (usluga -> lokalizacja)
+- [x] Przygotowac szablon strony lokalnej (usluga -> lokalizacja)
 
 ## Sprint 2: MVP lokalny
 - [ ] Opublikowac 4 strony uslugowe
