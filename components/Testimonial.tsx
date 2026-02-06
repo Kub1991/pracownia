@@ -28,7 +28,7 @@ export default function Testimonial() {
                   <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden">
                     <Image
                       src="/profile_testimonial.jpg"
-                      alt="Zadowolony pacjent"
+                      alt="Pacjent po naprawie protezy"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 128px, 160px"

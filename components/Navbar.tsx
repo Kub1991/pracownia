@@ -6,47 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ArrowRightIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import { useScroll } from '@/contexts/ScrollContext';
-
 const navLinks = [
-  { name: 'Problemy', href: '#problem-section', id: 'problem-section' },
-  { name: 'Proces', href: '#process-section', id: 'process-section' },
-  { name: 'Obszar', href: '#areas-served', id: 'areas-served' },
-  { name: 'Opinie', href: '#testimonials-section', id: 'testimonials-section' },
-  { name: 'FAQ', href: '#faq', id: 'faq' },
-  { name: 'Kontakt', href: '#contact-section', id: 'contact-section' },
+  { name: 'Problemy', href: '#problem-section' },
+  { name: 'Proces', href: '#process-section' },
+  { name: 'Obszar', href: '#areas-served' },
+  { name: 'Opinie', href: '#testimonials-section' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'Kontakt', href: '#contact-section' },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { setForceLoadSectionId } = useScroll();
-
-  const scrollToSection = (sectionId: string) => {
-    // First, try to find the element immediately
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-
-    // If element not found, force load the section
-    setForceLoadSectionId(sectionId);
-
-    // Poll for the element to appear in DOM
-    const pollForElement = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setForceLoadSectionId(null); // Clear the force load
-      } else {
-        // Continue polling
-        setTimeout(pollForElement, 100);
-      }
-    };
-
-    // Start polling after a short delay to allow React to re-render
-    setTimeout(pollForElement, 50);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +41,7 @@ export default function Navbar() {
             <div className="relative w-28 h-28 sm:w-36 sm:h-36">
               <Image
                 src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
-                alt="Logo Pracownia Protetyki"
+                alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
                 fill
                 className="object-contain"
                 sizes="144px"
@@ -83,13 +53,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.name}
-                onClick={() => scrollToSection(link.id)}
+                href={link.href}
                 className="font-inter font-medium text-clr-dark hover:text-clr-accent transition-colors duration-200 hover:underline underline-offset-4"
               >
                 {link.name}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -121,7 +91,7 @@ export default function Navbar() {
                   <div className="relative w-28 h-28 sm:w-36 sm:h-36">
                     <Image
                       src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
-                      alt="Logo Pracownia Protetyki"
+                      alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
                       fill
                       className="object-contain"
                       sizes="144px"
@@ -131,19 +101,20 @@ export default function Navbar() {
                 
                 <nav className="flex flex-col gap-3 sm:gap-4">
                   {navLinks.map((link) => (
-                    <button
+                    <a
                       key={link.name}
-                      onClick={() => scrollToSection(link.id)}
+                      href={link.href}
                       className="font-inter font-medium text-clr-dark hover:text-clr-accent transition-colors duration-200 py-2 border-b border-gray-100 last:border-b-0 text-sm sm:text-base"
                     >
                       {link.name}
-                    </button>
+                    </a>
                   ))}
                 </nav>
                 
                 <Button 
                   onClick={() => {
-                    scrollToSection('contact-section');
+                    const contactSection = document.getElementById('contact-section');
+                    contactSection?.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="bg-clr-accent text-clr-dark hover:bg-clr-dark hover:text-clr-white border border-clr-accent hover:border-clr-dark transition-all duration-200 rounded-full px-6 py-3 font-unbounded font-medium mt-4 w-full cursor-pointer text-sm hover:shadow-md"
                   aria-label="Umów wizytę - przejdź do formularza kontaktowego"

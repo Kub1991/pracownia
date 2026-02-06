@@ -74,7 +74,7 @@ export default function Hero() {
                     <div className="relative w-10 sm:w-12 h-10 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
                       <Image
                         src="/profile_testimonial.jpg"
-                        alt="Zadowolony pacjent"
+                        alt="Pacjent po naprawie protezy"
                         fill
                         className="object-cover"
                         sizes="(max-width: 640px) 40px, 48px"
@@ -105,7 +105,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/3] sm:aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden">
                   <Image
                     src="/hero_PHOTO.jpg"
-                    alt="Lume Dental clinic interior"
+                    alt="Pracownia protetyki stomatologicznej w Zakrzewie"
                     fill
                     className="object-cover"
                     priority

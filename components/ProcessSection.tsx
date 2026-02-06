@@ -45,7 +45,7 @@ export default function ProcessSection() {
                 <div className="relative aspect-[4/3] lg:aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden">
                   <Image
                     src="/SECTION_PHOTO copy.jpg"
-                    alt="Pracownia protetyki stomatologicznej"
+                    alt="Pracownia protetyki stomatologicznej w Zakrzewie"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"

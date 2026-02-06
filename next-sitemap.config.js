@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://protetyka-zakrzewo.pl',
-  generateRobotsTxt: true, // (optional) Generate robots.txt file
+  generateRobotsTxt: false,
   sitemapSize: 7000,
   changefreq: 'weekly',
   priority: 0.7,
@@ -18,16 +18,6 @@ module.exports = {
         lastmod: new Date().toISOString(),
       }
     }
-    
-    if (path === '/services' || path === '/contact') {
-      return {
-        loc: path,
-        changefreq: 'weekly',
-        priority: 0.9,
-        lastmod: new Date().toISOString(),
-      }
-    }
-
     // Default return
     return {
       loc: path,
@@ -36,14 +26,6 @@ module.exports = {
       lastmod: new Date().toISOString(),
     }
   },
-
-  // Additional paths that might not be automatically discovered
-  additionalPaths: async (config) => [
-    await config.transform(config, '/services'),
-    await config.transform(config, '/contact'),
-    await config.transform(config, '/about'),
-    await config.transform(config, '/faq'),
-  ],
 
   robotsTxtOptions: {
     policies: [
