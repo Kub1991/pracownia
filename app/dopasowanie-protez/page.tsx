@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ContactSection from '@/components/ContactSection';
 
 export const metadata: Metadata = {
-  title: 'Dopasowanie protez Zakrzewo | Protetyka – Karolina Szymanska',
-  description: 'Dopasowanie i korekta protez w Zakrzewie. Poprawa stabilnosci, komfortu i funkcji zgryzu.',
+  title: 'Dopasowanie protez Zakrzewo | Protetyka – Karolina Szymańska',
+  description: 'Dopasowanie i korekta protez w Zakrzewie. Poprawa stabilności, komfortu i funkcji zgryzu.',
   alternates: {
     canonical: '/dopasowanie-protez',
   },
@@ -19,8 +19,8 @@ export default function DopasowanieProtezPage() {
               Dopasowanie protez – Zakrzewo
             </h1>
             <p className="text-base sm:text-lg text-clr-dark/80 max-w-3xl leading-relaxed">
-              Jesli proteza jest luzna, powoduje otarcia lub dyskomfort, dopasowanie i korekta
-              pozwola odzyskac wygode i pewnosc noszenia.
+              Jeśli proteza jest luźna, powoduje otarcia lub dyskomfort, dopasowanie i korekta
+              pozwolą odzyskać wygodę i pewność noszenia.
             </p>
           </div>
         </div>
@@ -33,10 +33,10 @@ export default function DopasowanieProtezPage() {
               Kiedy potrzebne jest dopasowanie
             </h2>
             <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>proteza sie przesuwa lub wypada</li>
-              <li>pojawily sie otarcia lub bol</li>
-              <li>masz trudnosc w jedzeniu lub mowieniu</li>
-              <li>zgryz przestal byc stabilny</li>
+              <li>proteza się przesuwa lub wypada</li>
+              <li>pojawiły się otarcia lub ból</li>
+              <li>masz trudność w jedzeniu lub mówieniu</li>
+              <li>zgryz przestał być stabilny</li>
             </ul>
           </div>
         </div>
@@ -49,10 +49,10 @@ export default function DopasowanieProtezPage() {
               Jak przebiega korekta
             </h2>
             <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>ocena miejsc ucisku i stabilnosci</li>
+              <li>ocena miejsc ucisku i stabilności</li>
               <li>korekta powierzchni i dopasowanie</li>
               <li>sprawdzenie komfortu i funkcji zgryzu</li>
-              <li>zalecenia do dalszego uzytkowania</li>
+              <li>zalecenia do dalszego użytkowania</li>
             </ol>
           </div>
         </div>
@@ -67,15 +67,15 @@ export default function DopasowanieProtezPage() {
             <div className="space-y-4 text-sm sm:text-base text-clr-dark/80">
               <div>
                 <p className="font-medium text-clr-dark">Czy dopasowanie boli?</p>
-                <p>Nie. Wszystko odbywa sie delikatnie i z mysla o komforcie.</p>
+                <p>Nie. Wszystko odbywa się delikatnie i z myślą o komforcie.</p>
               </div>
               <div>
-                <p className="font-medium text-clr-dark">Jak szybko mozna wykonac korekte?</p>
+                <p className="font-medium text-clr-dark">Jak szybko można wykonać korektę?</p>
                 <p>W wielu przypadkach tego samego dnia po wizycie.</p>
               </div>
               <div>
-                <p className="font-medium text-clr-dark">Czy dopasowanie wystarcza na dlugo?</p>
-                <p>Tak, ale przy zmianach w jamie ustnej potrzebne moga byc kolejne korekty.</p>
+                <p className="font-medium text-clr-dark">Czy dopasowanie wystarcza na długo?</p>
+                <p>Tak, ale przy zmianach w jamie ustnej potrzebne mogą być kolejne korekty.</p>
               </div>
             </div>
           </div>

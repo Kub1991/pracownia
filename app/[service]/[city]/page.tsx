@@ -7,43 +7,43 @@ const SERVICES = {
     name: 'Naprawa protez',
     short: 'naprawa protez',
     description:
-      'Szybka pomoc przy peknieciach, wypadnieciu zeba i luznej protezie. Czesto mozliwe naprawy w 24h.',
+      'Szybka pomoc przy pęknięciach, wypadnięciu zęba i luźnej protezie. Często możliwe naprawy w 24h.',
   },
   'protezy-zebowe': {
-    name: 'Protezy zebowe',
-    short: 'protezy zebowe',
+    name: 'Protezy zębowe',
+    short: 'protezy zębowe',
     description:
-      'Dobor i wykonanie rozwiazan protetycznych dopasowanych do potrzeb, estetyki i komfortu.',
+      'Dobór i wykonanie rozwiązań protetycznych dopasowanych do potrzeb, estetyki i komfortu.',
   },
   'dopasowanie-protez': {
     name: 'Dopasowanie protez',
     short: 'dopasowanie protez',
     description:
-      'Korekta i dopasowanie, gdy proteza jest luzna, powoduje dyskomfort lub przesuwa sie.',
+      'Korekta i dopasowanie, gdy proteza jest luźna, powoduje dyskomfort lub przesuwa się.',
   },
   'konsultacje-protetyczne': {
     name: 'Konsultacje protetyczne',
     short: 'konsultacje protetyczne',
     description:
-      'Ocena sytuacji i plan dalszych krokow. Konkretne zalecenia i mozliwe rozwiazania.',
+      'Ocena sytuacji i plan dalszych kroków. Konkretne zalecenia i możliwe rozwiązania.',
   },
 } as const;
 
 const CITIES: Record<string, string> = {
   zakrzewo: 'Zakrzewo',
-  zlotow: 'Zlotow',
+  zlotow: 'Złotów',
   jastrowie: 'Jastrowie',
   krajenka: 'Krajenka',
   okonek: 'Okonek',
-  wiecbork: 'Wiecbork',
-  'sepolno-krajenskie': 'Sepolno Krajenskie',
-  pila: 'Pila',
+  wiecbork: 'Więcbork',
+  'sepolno-krajenskie': 'Sępólno Krajeńskie',
+  pila: 'Piła',
   debrzno: 'Debrzno',
-  czluchow: 'Czluchow',
+  czluchow: 'Człuchów',
   wysoka: 'Wysoka',
   lipka: 'Lipka',
-  tarnowka: 'Tarnowka',
-  lobzenica: 'Lobzenica',
+  tarnowka: 'Tarnówka',
+  lobzenica: 'Łobżenica',
 };
 
 type ServiceSlug = keyof typeof SERVICES;
@@ -70,8 +70,8 @@ export function generateMetadata({
   }
 
   return {
-    title: `${service.name} ${city} | Protetyka – Karolina Szymanska`,
-    description: `${service.name} w ${city}. ${service.description} Umow termin w Zakrzewie.`,
+    title: `${service.name} ${city} | Protetyka – Karolina Szymańska`,
+    description: `${service.name} w ${city}. ${service.description} Umów termin w Zakrzewie.`,
     alternates: {
       canonical: `/${params.service}/${params.city}`,
     },
@@ -103,8 +103,8 @@ export default function LocationServicePage({
               {service.name} – {city}
             </h1>
             <p className="text-base sm:text-lg text-clr-dark/80 max-w-3xl leading-relaxed">
-              {service.description} Obslugujemy pacjentow z {city} i okolic, a wizyty
-              realizujemy w Zakrzewie po wczesniejszym kontakcie.
+              {service.description} Obsługujemy pacjentów z {city} i okolic, a wizyty
+              realizujemy w Zakrzewie po wcześniejszym kontakcie.
             </p>
           </div>
         </div>
@@ -114,12 +114,12 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Najczestsze sytuacje z {city}
+              Najczęstsze sytuacje z {city}
             </h2>
             <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-              <li>nagla potrzeba pomocy z proteza przed waznym wydarzeniem</li>
-              <li>dyskomfort przy jedzeniu lub mowieniu</li>
-              <li>problem z dopasowaniem po dluzszym uzywaniu</li>
+              <li>nagła potrzeba pomocy z protezą przed ważnym wydarzeniem</li>
+              <li>dyskomfort przy jedzeniu lub mówieniu</li>
+              <li>problem z dopasowaniem po dłuższym użytkowaniu</li>
             </ul>
           </div>
         </div>
@@ -129,12 +129,12 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Jak wyglada proces
+              Jak wygląda proces
             </h2>
             <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
               <li>kontakt telefoniczny i opis problemu</li>
               <li>ustalenie terminu w Zakrzewie</li>
-              <li>wykonanie uslugi i dopasowanie</li>
+              <li>wykonanie usługi i dopasowanie</li>
               <li>zalecenia po wizycie</li>
             </ol>
           </div>
@@ -145,7 +145,7 @@ export default function LocationServicePage({
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
             <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
-              Powiazane lokalizacje
+              Powiązane lokalizacje
             </h2>
             <div className="flex flex-wrap gap-2 text-sm sm:text-base">
               {relatedCities.map((slug) => (
