@@ -7,44 +7,64 @@ const SERVICES = {
     name: 'Naprawa protez',
     short: 'naprawie protez',
     description:
-      'Szybka pomoc przy pęknięciach, wypadnięciu zęba i luźnej protezie. Często możliwe naprawy w 24h.',
+      'Pomoc przy pęknięciach, wypadnięciu zęba i poluzowaniu protezy. Zakres pracy zawsze dobierany jest do rzeczywistego uszkodzenia.',
     focusPoints: [
-      'stabilność i bezpieczne użytkowanie protezy po naprawie',
-      'estetykę po odtworzeniu brakującego lub uszkodzonego elementu',
-      'jasne zalecenia, jak uniknąć ponownego uszkodzenia',
+      'bezpieczne użytkowanie protezy po naprawie i kontrola stabilności',
+      'estetykę po odtworzeniu uszkodzonego elementu',
+      'jasne zalecenia, jak zmniejszyć ryzyko kolejnych uszkodzeń',
+    ],
+    firstContactTips: [
+      'powiedz, czy uszkodzenie pojawiło się nagle, czy narastało',
+      'opisz, czy proteza pękła, obciera, czy utraciła stabilność',
+      'zabezpiecz i zabierz wszystkie odłączone elementy',
     ],
   },
   'protezy-zebowe': {
     name: 'Protezy zębowe',
     short: 'protezie zębowej',
     description:
-      'Dobór i wykonanie rozwiązań protetycznych dopasowanych do potrzeb, estetyki i komfortu.',
+      'Dobór i wykonanie protez dopasowanych do warunków w jamie ustnej, estetyki i codziennego komfortu.',
     focusPoints: [
-      'dopasowanie rozwiązania do codziennych nawyków i oczekiwań',
-      'komfort noszenia przy mówieniu i jedzeniu',
-      'plan kontroli i ewentualnych korekt po oddaniu pracy',
+      'dobór rozwiązania do codziennych nawyków i oczekiwań pacjenta',
+      'komfort noszenia podczas mówienia i jedzenia',
+      'kontrola po oddaniu pracy i ewentualne korekty',
+    ],
+    firstContactTips: [
+      'opisz, czego najbardziej oczekujesz od nowej protezy',
+      'powiedz, jakie trudności pojawiają się przy obecnym rozwiązaniu',
+      'przygotuj pytania o komfort, estetykę i czas adaptacji',
     ],
   },
   'dopasowanie-protez': {
     name: 'Dopasowanie protez',
     short: 'dopasowaniu protezy',
     description:
-      'Korekta i dopasowanie, gdy proteza jest luźna, powoduje dyskomfort lub przesuwa się.',
+      'Korekta i dopasowanie, gdy proteza się przesuwa, obciera albo przestaje być wygodna w codziennym użytkowaniu.',
     focusPoints: [
-      'miejsca ucisku i punkty wymagające korekty',
-      'stabilność protezy podczas codziennych aktywności',
+      'miejsca ucisku wymagające korekty',
+      'stabilność protezy podczas jedzenia, mówienia i ruchu',
       'zalecenia dotyczące dalszej kontroli dopasowania',
+    ],
+    firstContactTips: [
+      'opisz, kiedy proteza najbardziej się przesuwa lub obciera',
+      'wskaż miejsca bólu i czas, od kiedy objawy się utrzymują',
+      'zabierz protezę, aby od razu ocenić punkty wymagające korekty',
     ],
   },
   'konsultacje-protetyczne': {
     name: 'Konsultacje protetyczne',
     short: 'konsultacji protetycznej',
     description:
-      'Ocena sytuacji i plan dalszych kroków. Konkretne zalecenia i możliwe rozwiązania.',
+      'Ocena aktualnej sytuacji i wybór najlepszych dalszych kroków. Konkretne zalecenia bez niepotrzebnego przeciągania decyzji.',
     focusPoints: [
       'zrozumiały plan postępowania krok po kroku',
       'dobór rozwiązania do aktualnego stanu i budżetu',
       'realny harmonogram dalszych wizyt i prac',
+    ],
+    firstContactTips: [
+      'krótko opisz, co obecnie najbardziej utrudnia codzienne funkcjonowanie',
+      'powiedz, czy problem dotyczy naprawy, dopasowania czy nowej protezy',
+      'przygotuj listę pytań, które chcesz wyjaśnić podczas wizyty',
     ],
   },
 } as const;
@@ -308,6 +328,17 @@ export default function LocationServicePage({
 
               <div>
                 <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                  Co przekazać przy pierwszym kontakcie
+                </h2>
+                <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
+                  {service.firstContactTips.map((tip) => (
+                    <li key={tip}>{tip}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
                   Jak przygotować wizytę przy dojeździe z {city.from}
                 </h2>
                 <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
@@ -328,7 +359,7 @@ export default function LocationServicePage({
                       href={`/${serviceSlug}/${params.city}`}
                       className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
                     >
-                      {SERVICES[serviceSlug].name} {city.nominative}
+                      {SERVICES[serviceSlug].name} w {city.locative}
                     </Link>
                   ))}
                 </div>
@@ -356,7 +387,7 @@ export default function LocationServicePage({
                       href={`/${params.service}/${slug}`}
                       className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
                     >
-                      {CITIES[slug].nominative}
+                      {service.name} w {CITIES[slug].locative}
                     </Link>
                   ))}
                 </div>

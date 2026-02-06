@@ -47,9 +47,9 @@ export default function Testimonial() {
 
                   {/* Quote */}
                   <blockquote className="text-lg lg:text-xl text-clr-dark/90 leading-relaxed mb-6 font-medium">
-                    "Pękła mi proteza w piątek wieczorem i myślałem, że będę musiał czekać do poniedziałku. 
-                    Zadzwoniłem do Lume Dental i już w sobotę rano miałem naprawioną protezę! 
-                    Profesjonalna obsługa, szybko i bez bólu. Polecam każdemu!"
+                    &ldquo;Pękła mi proteza w piątek wieczorem i myślałem, że będę musiał czekać do poniedziałku.
+                    Zadzwoniłem do Lume Dental i już w sobotę rano miałem naprawioną protezę!
+                    Profesjonalna obsługa, szybko i bez bólu. Polecam każdemu!&rdquo;
                   </blockquote>
 
                   {/* Author */}

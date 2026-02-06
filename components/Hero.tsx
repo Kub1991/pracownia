@@ -90,7 +90,7 @@ export default function Hero() {
                         ))}
                       </div>
                       <p className="text-xs sm:text-sm text-clr-dark/80 mb-1 sm:mb-2 leading-relaxed">
-                        "Bardzo miła pani, od razu poczułam, że jestem w dobrych rękach. Polecam!"
+                        &ldquo;Bardzo miła pani, od razu poczułam, że jestem w dobrych rękach. Polecam!&rdquo;
                       </p>
                       <p className="text-xs text-clr-dark/60 font-medium">
                         Pani Krystyna, Złotów

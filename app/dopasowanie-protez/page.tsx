@@ -3,20 +3,20 @@ import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
 
 const LOCATION_LINKS = [
-  { slug: 'pila', label: 'Piła' },
-  { slug: 'zlotow', label: 'Złotów' },
-  { slug: 'czluchow', label: 'Człuchów' },
-  { slug: 'wiecbork', label: 'Więcbork' },
-  { slug: 'sepolno-krajenskie', label: 'Sępólno Krajeńskie' },
-  { slug: 'jastrowie', label: 'Jastrowie' },
-  { slug: 'krajenka', label: 'Krajenka' },
-  { slug: 'okonek', label: 'Okonek' },
+  { slug: 'pila', label: 'Piła', locative: 'Pile' },
+  { slug: 'zlotow', label: 'Złotów', locative: 'Złotowie' },
+  { slug: 'czluchow', label: 'Człuchów', locative: 'Człuchowie' },
+  { slug: 'wiecbork', label: 'Więcbork', locative: 'Więcborku' },
+  { slug: 'sepolno-krajenskie', label: 'Sępólno Krajeńskie', locative: 'Sępólnie Krajeńskim' },
+  { slug: 'jastrowie', label: 'Jastrowie', locative: 'Jastrowiu' },
+  { slug: 'krajenka', label: 'Krajenka', locative: 'Krajence' },
+  { slug: 'okonek', label: 'Okonek', locative: 'Okonku' },
 ] as const;
 
 export const metadata: Metadata = {
-  title: 'Dopasowanie protez Zakrzewo i okolice | Większa stabilność',
+  title: 'Dopasowanie protez Zakrzewo | Komfort i stabilność',
   description:
-    'Dopasowanie i korekta protez dla pacjentów z Piły, Złotowa, Człuchowa, Więcborka i okolic. Poprawa komfortu i stabilności noszenia.',
+    'Dopasowanie i korekta protez w Zakrzewie dla pacjentów z Piły, Złotowa, Człuchowa i okolic. Poprawa stabilności, zmniejszenie ucisku i większy komfort na co dzień.',
   alternates: {
     canonical: '/dopasowanie-protez',
   },
@@ -32,8 +32,8 @@ export default function DopasowanieProtezPage() {
               Dopasowanie protez - Zakrzewo
             </h1>
             <p className="text-base sm:text-lg text-clr-dark/80 max-w-3xl leading-relaxed">
-              Jeśli proteza jest luźna, powoduje otarcia lub dyskomfort, dopasowanie i korekta
-              pozwolą odzyskać wygodę i pewność noszenia.
+              Gdy proteza zaczyna się przesuwać, obciera lub powoduje ból, warto szybko wykonać korektę.
+              Precyzyjne dopasowanie poprawia stabilność i ogranicza przeciążenie tkanek.
             </p>
 
             <div className="mt-10 space-y-10">
@@ -42,10 +42,10 @@ export default function DopasowanieProtezPage() {
                   Kiedy potrzebne jest dopasowanie
                 </h2>
                 <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-                  <li>proteza się przesuwa lub wypada</li>
-                  <li>pojawiły się otarcia lub ból</li>
-                  <li>masz trudność w jedzeniu lub mówieniu</li>
-                  <li>zgryz przestał być stabilny</li>
+                  <li>proteza przesuwa się podczas mówienia, gryzienia albo śmiechu</li>
+                  <li>pojawiają się otarcia, ból lub punkty ucisku</li>
+                  <li>jedzenie i mówienie stają się mniej komfortowe niż wcześniej</li>
+                  <li>zgryz traci stabilność i trudniej utrzymać pewność noszenia</li>
                 </ul>
               </div>
 
@@ -54,10 +54,10 @@ export default function DopasowanieProtezPage() {
                   Jak przebiega korekta
                 </h2>
                 <ol className="list-decimal pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-                  <li>ocena miejsc ucisku i stabilności</li>
-                  <li>korekta powierzchni i dopasowanie</li>
-                  <li>sprawdzenie komfortu i funkcji zgryzu</li>
-                  <li>zalecenia do dalszego użytkowania</li>
+                  <li>Oceniam stabilność protezy i miejsca, które powodują największy dyskomfort.</li>
+                  <li>Wprowadzam korekty powierzchni oraz dopasowania do aktualnych warunków.</li>
+                  <li>Sprawdzam komfort mówienia, jedzenia i funkcję zgryzu po korekcie.</li>
+                  <li>Otrzymujesz jasne zalecenia dotyczące dalszego użytkowania i kontroli.</li>
                 </ol>
               </div>
 
@@ -66,9 +66,9 @@ export default function DopasowanieProtezPage() {
                   Co poprawiamy podczas dopasowania
                 </h2>
                 <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base">
-                  <li>stabilność protezy podczas mówienia, jedzenia i codziennych aktywności</li>
-                  <li>punkty ucisku powodujące otarcia i przeciążenie tkanek</li>
-                  <li>komfort użytkowania po dłuższym okresie noszenia</li>
+                  <li>stabilność protezy podczas mówienia, jedzenia i codziennego ruchu</li>
+                  <li>punkty ucisku odpowiedzialne za otarcia, ból i podrażnienia</li>
+                  <li>komfort użytkowania po dłuższym czasie noszenia</li>
                 </ul>
               </div>
 
@@ -103,7 +103,7 @@ export default function DopasowanieProtezPage() {
                       href={`/dopasowanie-protez/${city.slug}`}
                       className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
                     >
-                      Dopasowanie protez {city.label}
+                      Dopasowanie protez w {city.locative}
                     </Link>
                   ))}
                 </div>
@@ -114,15 +114,15 @@ export default function DopasowanieProtezPage() {
                   Pozostałe usługi w wybranych miastach
                 </h2>
                 <div className="flex flex-wrap gap-2 text-sm sm:text-base">
-                  <Link href="/naprawa-protez/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Piła</Link>
-                  <Link href="/protezy-zebowe/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Piła</Link>
-                  <Link href="/konsultacje-protetyczne/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne Piła</Link>
-                  <Link href="/naprawa-protez/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Złotów</Link>
-                  <Link href="/protezy-zebowe/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Złotów</Link>
-                  <Link href="/konsultacje-protetyczne/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne Złotów</Link>
-                  <Link href="/naprawa-protez/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez Człuchów</Link>
-                  <Link href="/protezy-zebowe/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe Człuchów</Link>
-                  <Link href="/konsultacje-protetyczne/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne Człuchów</Link>
+                  <Link href="/naprawa-protez/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez w Pile</Link>
+                  <Link href="/protezy-zebowe/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe w Pile</Link>
+                  <Link href="/konsultacje-protetyczne/pila" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne w Pile</Link>
+                  <Link href="/naprawa-protez/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez w Złotowie</Link>
+                  <Link href="/protezy-zebowe/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe w Złotowie</Link>
+                  <Link href="/konsultacje-protetyczne/zlotow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne w Złotowie</Link>
+                  <Link href="/naprawa-protez/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Naprawa protez w Człuchowie</Link>
+                  <Link href="/protezy-zebowe/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Protezy zębowe w Człuchowie</Link>
+                  <Link href="/konsultacje-protetyczne/czluchow" className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors">Konsultacje protetyczne w Człuchowie</Link>
                 </div>
               </div>
             </div>

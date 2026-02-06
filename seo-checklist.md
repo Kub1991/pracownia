@@ -30,6 +30,5 @@
 - [x] Pierwsza iteracja CTR (title/description)
 
 ## Sprint 4: Domkniecie klastra
-- [ ] Opublikowac pozostale 24 strony lokalne
 - [ ] Dodac 4 artykuly poradnikowe
-- [ ] Audyt kanibalizacji i korekta anchor textow
+- [x] Audyt kanibalizacji i korekta anchor textow
