@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'Konsultacje protetyczne w Zakrzewie dla pacjentów z Piły, Złotowa, Człuchowa i okolic. Ocena problemu, rekomendacje i praktyczny plan działania.',
   alternates: {
-    canonical: '/konsultacje-protetyczne',
+    canonical: '/konsultacje-protetyczne/',
   },
 };
 

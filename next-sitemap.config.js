@@ -1,4 +1,22 @@
 /** @type {import('next-sitemap').IConfig} */
+const INDEXABLE_CITY_SLUGS = new Set(['zlotow', 'krajenka', 'czluchow', 'jastrowie']);
+const LOCAL_SERVICE_SLUGS = new Set([
+  'naprawa-protez',
+  'protezy-zebowe',
+  'dopasowanie-protez',
+  'konsultacje-protetyczne',
+]);
+
+function withTrailingSlash(path) {
+  if (path === '/') return '/';
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+function normalizePath(path) {
+  if (path === '/') return '/';
+  return path.replace(/\/+$/, '');
+}
+
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://protetyka-zakrzewo.pl',
   generateRobotsTxt: false,
@@ -11,10 +29,22 @@ module.exports = {
   
   // Custom transformation for specific pages
   transform: async (config, path) => {
+    const normalizedPath = normalizePath(path);
+    const localPathMatch = normalizedPath.match(
+      /^\/(naprawa-protez|protezy-zebowe|dopasowanie-protez|konsultacje-protetyczne)\/([a-z0-9-]+)$/
+    );
+
+    if (localPathMatch) {
+      const [, serviceSlug, citySlug] = localPathMatch;
+      if (LOCAL_SERVICE_SLUGS.has(serviceSlug) && !INDEXABLE_CITY_SLUGS.has(citySlug)) {
+        return null;
+      }
+    }
+
     // Set higher priority for main pages
-    if (path === '/') {
+    if (normalizedPath === '/') {
       return {
-        loc: path,
+        loc: '/',
         changefreq: 'daily',
         priority: 1.0,
         lastmod: new Date().toISOString(),
@@ -22,7 +52,7 @@ module.exports = {
     }
     // Default return
     return {
-      loc: path,
+      loc: withTrailingSlash(normalizedPath),
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: new Date().toISOString(),

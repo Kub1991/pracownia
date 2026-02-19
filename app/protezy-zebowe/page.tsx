@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'Protezy zębowe w Zakrzewie dla pacjentów z Piły, Złotowa, Człuchowa i okolic. Dobór rozwiązania, wykonanie i kontrola komfortu codziennego użytkowania.',
   alternates: {
-    canonical: '/protezy-zebowe',
+    canonical: '/protezy-zebowe/',
   },
 };
 

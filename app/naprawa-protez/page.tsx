@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'Naprawa protez zębowych w Zakrzewie dla pacjentów z Piły, Złotowa, Człuchowa i okolic. Ocena uszkodzenia, bezpieczna naprawa i zalecenia po wizycie.',
   alternates: {
-    canonical: '/naprawa-protez',
+    canonical: '/naprawa-protez/',
   },
 };
 

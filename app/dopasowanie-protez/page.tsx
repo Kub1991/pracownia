@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'Dopasowanie i korekta protez w Zakrzewie dla pacjentów z Piły, Złotowa, Człuchowa i okolic. Poprawa stabilności, zmniejszenie ucisku i większy komfort na co dzień.',
   alternates: {
-    canonical: '/dopasowanie-protez',
+    canonical: '/dopasowanie-protez/',
   },
 };
 

@@ -231,11 +231,24 @@ const CITIES: Record<string, CityData> = {
 type CitySlug = keyof typeof CITIES;
 
 const SERVICE_HUB_PATHS: Record<ServiceSlug, string> = {
-  'naprawa-protez': '/naprawa-protez',
-  'protezy-zebowe': '/protezy-zebowe',
-  'dopasowanie-protez': '/dopasowanie-protez',
-  'konsultacje-protetyczne': '/konsultacje-protetyczne',
+  'naprawa-protez': '/naprawa-protez/',
+  'protezy-zebowe': '/protezy-zebowe/',
+  'dopasowanie-protez': '/dopasowanie-protez/',
+  'konsultacje-protetyczne': '/konsultacje-protetyczne/',
 };
+
+const INDEXABLE_CITY_SLUGS = [
+  'zlotow',
+  'krajenka',
+  'czluchow',
+  'jastrowie',
+] as const;
+
+const INDEXABLE_CITY_SET = new Set<string>(INDEXABLE_CITY_SLUGS);
+
+function shouldIndexCity(city: CitySlug): boolean {
+  return INDEXABLE_CITY_SET.has(city);
+}
 
 export function generateStaticParams() {
   const services = Object.keys(SERVICES) as ServiceSlug[];
@@ -258,13 +271,31 @@ export function generateMetadata({
     return {};
   }
 
-  return {
+  const isIndexableCity = shouldIndexCity(params.city);
+  const serviceHubPath = SERVICE_HUB_PATHS[params.service];
+
+  const metadata: Metadata = {
     title: `${service.name} ${city.nominative} | Termin w Zakrzewie`,
     description: `${service.name} dla pacjentów z ${city.from}. ${city.metaHook} Umów kontakt i wizytę w Zakrzewie.`,
     alternates: {
-      canonical: `/${params.service}/${params.city}`,
+      canonical: isIndexableCity
+        ? `/${params.service}/${params.city}/`
+        : serviceHubPath,
     },
   };
+
+  if (!isIndexableCity) {
+    metadata.robots = {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
+    };
+  }
+
+  return metadata;
 }
 
 export default function LocationServicePage({
@@ -280,7 +311,7 @@ export default function LocationServicePage({
   }
 
   const relatedCities = (Object.keys(CITIES) as CitySlug[])
-    .filter((slug) => slug !== params.city)
+    .filter((slug) => shouldIndexCity(slug) && slug !== params.city)
     .slice(0, 6);
   const relatedServices = (Object.keys(SERVICES) as ServiceSlug[]).filter(
     (slug) => slug !== params.service
