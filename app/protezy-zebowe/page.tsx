@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ProtezyZebowePage() {
   return (
     <div className="bg-clr-gray">
-      <section className="pt-20 pb-12">
+      <section className="pt-20 pb-6">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 shadow-sm">
             <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4">
@@ -36,8 +36,16 @@ export default function ProtezyZebowePage() {
               wygodna, stabilna i naturalna w codziennym użytkowaniu. Każde rozwiązanie dobieram indywidualnie
               do potrzeb pacjenta oraz warunków w jamie ustnej.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-10 space-y-10">
+      <ContactSection layoutVariant="subpage" />
+
+      <section className="pt-6 pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="bg-white rounded-2xl lg:rounded-3xl px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 shadow-sm">
+            <div className="space-y-10">
               <div>
                 <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
                   Kiedy warto rozważyć protezy zębowe
@@ -130,8 +138,6 @@ export default function ProtezyZebowePage() {
           </div>
         </div>
       </section>
-
-      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

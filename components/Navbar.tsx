@@ -1,12 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ArrowRightIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+
 const navLinks = [
+  { name: 'Start', href: '/' },
   { name: 'Problemy', href: '#problem-section' },
   { name: 'Proces', href: '#process-section' },
   { name: 'Obszar', href: '#areas-served' },
@@ -17,6 +21,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +32,18 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const getNavHref = (href: string) => {
+    if (href === '/') {
+      return '/';
+    }
+
+    return pathname === '/' ? href : `/${href}`;
+  };
+
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className={clsx(
@@ -38,28 +56,30 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-28 h-28 sm:w-36 sm:h-36">
-              <Image
-                src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
-                alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
-                fill
-                className="object-contain"
-                sizes="144px"
-                priority
-              />
-            </div>
+            <Link href="/" aria-label="Przejdź do strony głównej" className="block">
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36">
+                <Image
+                  src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
+                  alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
+                  fill
+                  className="object-contain"
+                  sizes="144px"
+                  priority
+                />
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                href={getNavHref(link.href)}
                 className="font-inter font-medium text-clr-dark hover:text-clr-accent transition-colors duration-200 hover:underline underline-offset-4"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -79,7 +99,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu */}
-          <Sheet>
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
                 <Bars3Icon className="h-5 sm:h-6 w-5 sm:w-6 text-clr-dark" />
@@ -88,31 +108,35 @@ export default function Navbar() {
             <SheetContent side="right" className="w-72 sm:w-80">
               <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="relative w-28 h-28 sm:w-36 sm:h-36">
-                    <Image
-                      src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
-                      alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
-                      fill
-                      className="object-contain"
-                      sizes="144px"
-                    />
-                  </div>
+                  <Link href="/" aria-label="Przejdź do strony głównej" className="block" onClick={handleMenuClose}>
+                    <div className="relative w-28 h-28 sm:w-36 sm:h-36">
+                      <Image
+                        src="/Logo_Pracownia_Protetyki_K.Szymanska.v2.png"
+                        alt="Logo Pracownia Protetyki Stomatologicznej Karolina Szymanska"
+                        fill
+                        className="object-contain"
+                        sizes="144px"
+                      />
+                    </div>
+                  </Link>
                 </div>
                 
                 <nav className="flex flex-col gap-3 sm:gap-4">
                   {navLinks.map((link) => (
-                    <a
+                    <Link
                       key={link.name}
-                      href={link.href}
+                      href={getNavHref(link.href)}
+                      onClick={handleMenuClose}
                       className="font-inter font-medium text-clr-dark hover:text-clr-accent transition-colors duration-200 py-2 border-b border-gray-100 last:border-b-0 text-sm sm:text-base"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
                 
                 <Button 
                   onClick={() => {
+                    handleMenuClose();
                     const contactSection = document.getElementById('contact-section');
                     contactSection?.scrollIntoView({ behavior: 'smooth' });
                   }}

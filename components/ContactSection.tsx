@@ -146,9 +146,15 @@ export default function ContactSection({
 
   return (
     <section id="contact-section" className="py-2 bg-clr-gray">
-      <div className="w-full px-6 lg:px-8">
-        <div className="w-full max-w-[1200px] mx-auto">
-          <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
+      <div className={isSubpageLayout ? 'max-w-[1200px] mx-auto px-6 lg:px-8' : 'w-full px-6 lg:px-8'}>
+        <div className={isSubpageLayout ? '' : 'w-full max-w-[1200px] mx-auto'}>
+          <div
+            className={`bg-white rounded-2xl lg:rounded-3xl shadow-sm ${
+              isSubpageLayout
+                ? 'px-6 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14'
+                : 'px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14'
+            }`}
+          >
             {!isSubpageLayout && (
               <div className="text-center mb-8 sm:mb-10 lg:mb-12">
                 <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
