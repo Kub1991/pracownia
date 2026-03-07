@@ -230,6 +230,18 @@ const CITIES: Record<string, CityData> = {
 
 type CitySlug = keyof typeof CITIES;
 
+type LocalPageSection = {
+  title: string;
+  body: string;
+  bullets?: [string, string, string] | [string, string, string, string];
+};
+
+type LocalPageOverride = {
+  metaTitle?: string;
+  metaDescription?: string;
+  sections: [LocalPageSection, LocalPageSection];
+};
+
 const SERVICE_HUB_PATHS: Record<ServiceSlug, string> = {
   'naprawa-protez': '/naprawa-protez/',
   'protezy-zebowe': '/protezy-zebowe/',
@@ -245,6 +257,119 @@ const INDEXABLE_CITY_SLUGS = [
 ] as const;
 
 const INDEXABLE_CITY_SET = new Set<string>(INDEXABLE_CITY_SLUGS);
+
+const LOCAL_PAGE_OVERRIDES: Partial<Record<string, LocalPageOverride>> = {
+  'protezy-zebowe/czluchow': {
+    metaTitle: 'Protezy zębowe Człuchów | Dobór rozwiązania w Zakrzewie',
+    metaDescription:
+      'Protezy zębowe dla pacjentów z Człuchowa. Ocena obecnej protezy, dobór nowego rozwiązania i plan wykonania wizyty w Zakrzewie.',
+    sections: [
+      {
+        title: 'Kiedy warto omówić nową protezę',
+        body:
+          'Jeśli obecna proteza nie daje już stabilności, utrudnia jedzenie albo nie wygląda tak, jak oczekujesz, konsultacja pozwala spokojnie ocenić, czy wystarczy korekta, czy lepszym rozwiązaniem będzie nowa praca. Dla pacjentów z Człuchowa ważny jest zwykle jasny plan: co da się zrobić od razu, ile etapów będzie potrzebnych i na jakim efekcie można realnie się oprzeć w codziennym użytkowaniu.',
+      },
+      {
+        title: 'Na co zwracam uwagę przy doborze rozwiązania',
+        body:
+          'Podczas planowania nowej pracy liczy się nie tylko sam wygląd, ale również to, jak proteza sprawdzi się w zwykłych sytuacjach dnia codziennego.',
+        bullets: [
+          'czy obecna proteza nadal spełnia swoją funkcję podczas mówienia i jedzenia',
+          'czy problem wynika z dopasowania, zużycia pracy czy zmiany warunków w jamie ustnej',
+          'jak połączyć wygodę noszenia z estetyką i stabilnością na co dzień',
+        ],
+      },
+    ],
+  },
+  'protezy-zebowe/zlotow': {
+    metaTitle: 'Protezy zębowe Złotów | Komfort i estetyka na co dzień',
+    metaDescription:
+      'Protezy zębowe dla pacjentów ze Złotowa. Dobór rozwiązania pod wygodę noszenia, estetykę i spokojny plan wykonania w Zakrzewie.',
+    sections: [
+      {
+        title: 'Co jest najważniejsze przy nowej protezie',
+        body:
+          'Pacjenci ze Złotowa najczęściej pytają nie tylko o sam wygląd, ale przede wszystkim o to, czy proteza będzie wygodna przez cały dzień. Dlatego dobór rozwiązania opiera się nie tylko na odbudowie braków, ale też na komforcie mówienia, jedzenia i pewności noszenia w zwykłych sytuacjach dnia codziennego.',
+      },
+      {
+        title: 'Przed pierwszą wizytą warto przygotować',
+        body:
+          'Dobrze przygotowana konsultacja pozwala szybciej przejść od ogólnej rozmowy do konkretnego planu wykonania pracy.',
+        bullets: [
+          'informację, co najbardziej przeszkadza w obecnym rozwiązaniu',
+          'obecną protezę, jeśli była wcześniej używana',
+          'pytania o wygodę, estetykę i późniejsze wizyty kontrolne',
+        ],
+      },
+    ],
+  },
+  'naprawa-protez/krajenka': {
+    metaTitle: 'Naprawa protez Krajenka | Szybka ocena uszkodzenia',
+    metaDescription:
+      'Naprawa protez dla pacjentów z Krajenki. Ocena świeżego uszkodzenia, decyzja o zakresie naprawy i szybki plan wizyty w Zakrzewie.',
+    sections: [
+      {
+        title: 'Najczęstsze sytuacje wymagające szybkiej naprawy',
+        body:
+          'W przypadku pacjentów z Krajenki najczęściej chodzi o nagłe uszkodzenie, które od razu utrudnia normalne funkcjonowanie: pęknięcie płyty, odłamany fragment albo wypadnięty ząb z protezy. W takiej sytuacji najważniejsze jest szybkie zabezpieczenie pracy, ocena uszkodzenia i decyzja, czy naprawa będzie wystarczająca bez wykonywania nowego rozwiązania.',
+      },
+      {
+        title: 'Czego nie robić przed wizytą',
+        body:
+          'Przy świeżym uszkodzeniu najwięcej problemów powodują domowe próby naprawy, które utrudniają późniejszą ocenę pracy.',
+        bullets: [
+          'nie sklejać protezy samodzielnie domowymi środkami',
+          'nie wyrzucać małych odłączonych fragmentów',
+          'nie odkładać kontaktu, jeśli uszkodzenie powoduje ból lub niestabilność',
+        ],
+      },
+    ],
+  },
+  'naprawa-protez/czluchow': {
+    metaTitle: 'Naprawa protez Człuchów | Kiedy wystarczy naprawa',
+    metaDescription:
+      'Naprawa protez dla pacjentów z Człuchowa. Ocena uszkodzenia, sprawdzenie stabilności pracy i decyzja, czy naprawa ma sens bez wykonywania nowej protezy.',
+    sections: [
+      {
+        title: 'Kiedy naprawa ma sens',
+        body:
+          'Nie każde uszkodzenie oznacza konieczność wykonania nowej protezy. U pacjentów z Człuchowa często wystarczy dobrze zaplanowana naprawa, jeśli problem dotyczy pęknięcia, poluzowania elementu albo pojedynczego ubytku w pracy. Najważniejsze jest jednak sprawdzenie, czy po naprawie proteza nadal będzie bezpieczna i wygodna w użytkowaniu.',
+      },
+      {
+        title: 'Podczas oceny sprawdzam przede wszystkim',
+        body:
+          'Przed podjęciem decyzji o naprawie liczy się nie tylko sam ubytek, ale też to, czy cała praca nadal rokuje stabilne użytkowanie.',
+        bullets: [
+          'czy uszkodzenie jest punktowe, czy dotyczy całej stabilności pracy',
+          'czy po naprawie można zachować komfort codziennego noszenia',
+          'czy lepiej zakończyć temat naprawą, czy przejść do konsultacji szerszego planu',
+        ],
+      },
+    ],
+  },
+  'naprawa-protez/zlotow': {
+    metaTitle: 'Naprawa protez Złotów | Szybki kontakt i plan działania',
+    metaDescription:
+      'Naprawa protez dla pacjentów ze Złotowa. Szybki kontakt, ocena rodzaju uszkodzenia i jasny plan wizyty w Zakrzewie.',
+    sections: [
+      {
+        title: 'Jak wygląda szybka ścieżka kontaktu',
+        body:
+          'Pacjenci ze Złotowa zwykle chcą od razu wiedzieć, czy problem można rozwiązać szybko i co przygotować przed wizytą. Dlatego pierwszy kontakt powinien od razu wyjaśnić trzy rzeczy: jaki jest rodzaj uszkodzenia, czy trzeba zabrać dodatkowe elementy i jaki termin pozwoli bezpiecznie ocenić oraz naprawić protezę bez niepotrzebnego czekania.',
+      },
+      {
+        title: 'Najlepiej przekazać od razu',
+        body:
+          'Krótki, konkretny opis problemu już na początku ułatwia dobranie właściwego terminu i przygotowanie się do oceny pracy.',
+        bullets: [
+          'czy uszkodzenie pojawiło się nagle, czy narastało',
+          'czy proteza nadal nadaje się do założenia',
+          'czy problem dotyczy pęknięcia, wypadniętego zęba czy ucisku po noszeniu',
+        ],
+      },
+    ],
+  },
+};
 
 function shouldIndexCity(city: CitySlug): boolean {
   return INDEXABLE_CITY_SET.has(city);
@@ -273,10 +398,15 @@ export function generateMetadata({
 
   const isIndexableCity = shouldIndexCity(params.city);
   const serviceHubPath = SERVICE_HUB_PATHS[params.service];
+  const pageOverride = LOCAL_PAGE_OVERRIDES[`${params.service}/${params.city}`];
 
   const metadata: Metadata = {
-    title: `${service.name} ${city.nominative} | Termin w Zakrzewie`,
-    description: `${service.name} dla pacjentów z ${city.from}. ${city.metaHook} Umów kontakt i wizytę w Zakrzewie.`,
+    title:
+      pageOverride?.metaTitle ??
+      `${service.name} ${city.nominative} | Termin w Zakrzewie`,
+    description:
+      pageOverride?.metaDescription ??
+      `${service.name} dla pacjentów z ${city.from}. ${city.metaHook} Umów kontakt i wizytę w Zakrzewie.`,
     alternates: {
       canonical: isIndexableCity
         ? `/${params.service}/${params.city}/`
@@ -317,6 +447,7 @@ export default function LocationServicePage({
     (slug) => slug !== params.service
   );
   const serviceHubPath = SERVICE_HUB_PATHS[params.service];
+  const pageOverride = LOCAL_PAGE_OVERRIDES[`${params.service}/${params.city}`];
 
   return (
     <div className="bg-clr-gray">
@@ -378,6 +509,24 @@ export default function LocationServicePage({
                   ))}
                 </ol>
               </div>
+
+              {pageOverride?.sections.map((section) => (
+                <div key={section.title}>
+                  <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
+                    {section.title}
+                  </h2>
+                  <p className="text-sm sm:text-base text-clr-dark/80 leading-relaxed">
+                    {section.body}
+                  </p>
+                  {section.bullets ? (
+                    <ul className="list-disc pl-5 text-clr-dark/80 space-y-2 text-sm sm:text-base mt-4">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              ))}
 
               <div>
                 <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-clr-dark mb-4">
