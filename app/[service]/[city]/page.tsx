@@ -577,7 +577,7 @@ export default function LocationServicePage({
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

@@ -130,7 +130,7 @@ export default function DopasowanieProtezPage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

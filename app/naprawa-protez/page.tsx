@@ -131,7 +131,7 @@ export default function NaprawaProtezPage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

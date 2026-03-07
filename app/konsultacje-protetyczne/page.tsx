@@ -130,7 +130,7 @@ export default function KonsultacjeProtetycznePage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

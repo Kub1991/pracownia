@@ -131,7 +131,7 @@ export default function ProtezyZebowePage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection layoutVariant="subpage" />
     </div>
   );
 }

@@ -52,9 +52,13 @@ type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function ContactSection({
   showMap = true,
+  layoutVariant = 'default',
 }: {
   showMap?: boolean;
+  layoutVariant?: 'default' | 'subpage';
 }) {
+  const isSubpageLayout = layoutVariant === 'subpage';
+
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     phone: '',
@@ -145,17 +149,19 @@ export default function ContactSection({
       <div className="w-full px-6 lg:px-8">
         <div className="w-full max-w-[1200px] mx-auto">
           <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
-            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-              <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
-                Potrzebujesz pomocy? Jestem blisko!
-              </h2>
-              <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                Skontaktuj się ze mną już dziś - pomogę rozwiązać problem z Twoją protezą.
-              </p>
-            </div>
+            {!isSubpageLayout && (
+              <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
+                  Potrzebujesz pomocy? Jestem blisko!
+                </h2>
+                <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+                  Skontaktuj się ze mną już dziś - pomogę rozwiązać problem z Twoją protezą.
+                </p>
+              </div>
+            )}
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
-              <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+              <div className={`space-y-6 sm:space-y-8 ${isSubpageLayout ? 'order-1 lg:order-1' : 'order-2 lg:order-1'}`}>
                 <a href="tel:+48735491129" className="block">
                   <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-6 sm:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                     <div className="text-center">
@@ -176,7 +182,11 @@ export default function ContactSection({
                 </a>
 
                 {showMap && (
-                  <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden">
+                  <Card
+                    className={`bg-gray-50 rounded-2xl lg:rounded-3xl p-0 border border-gray-200 shadow-none overflow-hidden ${
+                      isSubpageLayout ? 'hidden lg:block' : ''
+                    }`}
+                  >
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.1582626101435!2d17.1516095!3d53.411995700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703cf2aafc11835%3A0x64a424f50f9471f2!2sPracownia%20Protetyki%20Stomatologicznej%20-%20Karolina%20Szyma%C5%84ska!5e0!3m2!1spl!2spl!4v1753817064223!5m2!1spl!2spl"
                       width="100%"
@@ -192,7 +202,7 @@ export default function ContactSection({
                 )}
               </div>
 
-              <div className="order-1 lg:order-2">
+              <div className={isSubpageLayout ? 'order-2 lg:order-2' : 'order-1 lg:order-2'}>
                 <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-none">
                   <h3 className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark mb-4 sm:mb-6 text-center">
                     Formularz kontaktowy
