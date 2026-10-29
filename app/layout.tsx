@@ -97,8 +97,8 @@ gtag('config', '${GA_MEASUREMENT_ID}');
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 53.7833,
-                "longitude": 17.9167
+                "latitude": 53.41201728970456,
+                "longitude": 17.151588043383537
               },
               "openingHoursSpecification": [
                 {
@@ -136,8 +136,8 @@ gtag('config', '${GA_MEASUREMENT_ID}');
                 "@type": "GeoCircle",
                 "geoMidpoint": {
                   "@type": "GeoCoordinates",
-                  "latitude": 53.7833,
-                  "longitude": 17.9167
+                  "latitude": 53.41201728970456,
+                  "longitude": 17.151588043383537
                 },
                 "geoRadius": "50000"
               },
