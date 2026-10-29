@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Unbounded } from 'next/font/google';
+import localFont from 'next/font/local';
 import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,15 +9,17 @@ import { ScrollProvider } from '@/contexts/ScrollContext';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-E1QBMV9JPX';
 const ENABLE_GA = process.env.NODE_ENV === 'production';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
+const inter = localFont({
+  src: './fonts/Inter-Variable.ttf',
+  weight: '100 900',
+  display: 'swap',
   variable: '--font-inter'
 });
 
-const unbounded = Unbounded({ 
-  subsets: ['latin'],
-  weight: ['400', '700', '800'],
+const unbounded = localFont({
+  src: './fonts/Unbounded-Variable.ttf',
+  weight: '200 900',
+  display: 'swap',
   variable: '--font-unbounded'
 });
 
