@@ -13,7 +13,7 @@ const faqData = [
   },
   {
     question: "Jaki jest koszt naprawy?",
-    answer: "Zależy od rodzaju uszkodzenia. Po krótkiej konsultacji podaję widełki ceny oraz termin."
+    answer: "Koszt ustalam indywidualnie po ocenie uszkodzenia i omówieniu zakresu naprawy. Termin również zależy od rodzaju usterki i dostępności."
   },
   {
     question: "Czy naprawiacie na miejscu, czy muszę zostawić protezę?",

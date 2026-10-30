@@ -96,7 +96,7 @@ export default function NaprawaProtezPage() {
                   </div>
                   <div>
                     <p className="font-medium text-clr-dark">Ile kosztuje naprawa?</p>
-                    <p>Cena zależy od rodzaju uszkodzenia. Podam widełki po krótkiej konsultacji.</p>
+                    <p>Koszt ustalam indywidualnie po ocenie uszkodzenia i omówieniu zakresu naprawy.</p>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function NaprawaProtezPage() {
                       href={`/naprawa-protez/${city.slug}`}
                       className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
                     >
-                      Naprawa protez w {city.locative}
+                      Naprawa protez — {city.label} (wizyta w Zakrzewie)
                     </Link>
                   ))}
                 </div>

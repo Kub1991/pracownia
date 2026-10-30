@@ -112,7 +112,7 @@ export default function ProtezyZebowePage() {
                       href={`/protezy-zebowe/${city.slug}`}
                       className="px-3 py-1 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors"
                     >
-                      Protezy zębowe w {city.locative}
+                      Protezy zębowe — {city.label} (wizyta w Zakrzewie)
                     </Link>
                   ))}
                 </div>
