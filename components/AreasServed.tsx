@@ -29,11 +29,10 @@ export default function AreasServed() {
           <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm">
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
               <h2 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark mb-4 sm:mb-6">
-                Pacjenci odwiedzają mnie z tych miejscowości
+                Dojazd do pracowni w Zakrzewie
               </h2>
               <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                Moja pracownia w Zakrzewie to punkt, do którego najczęściej przyjeżdżają pacjenci
-                z poniższych miejscowości, szukający szybkiej i profesjonalnej pomocy.
+                Pracownia mieści się w Zakrzewie. Sprawdź informacje o naprawie protez i dojeździe z okolicznych miejscowości. Przed przyjazdem ustal termin telefonicznie.
               </p>
             </div>
 

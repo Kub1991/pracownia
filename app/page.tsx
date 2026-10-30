@@ -12,11 +12,7 @@ export default function Home() {
     <div>
       <Hero />
 
-      <ProblemSection />
-      <ProcessSection />
-      <TestimonialsSection />
-
-      <section className="py-8 bg-clr-gray">
+      <section id="services" className="py-8 bg-clr-gray">
         <div className="w-full px-6 lg:px-8">
           <div className="w-full max-w-[1200px] mx-auto">
             <div className="bg-white rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 shadow-sm">
@@ -24,7 +20,7 @@ export default function Home() {
               Usługi protetyczne
             </h2>
             <p className="text-base sm:text-lg text-clr-dark/80 max-w-3xl leading-relaxed mb-6">
-              Poznaj zakres usług i wybierz to, czego potrzebujesz. Każda usługa ma osobną stronę z opisem i FAQ.
+              Poznaj możliwości naprawy, wykonania i dopasowania protez. Wybierz usługę, aby sprawdzić jej zakres i sposób ustalenia wizyty.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <Link
@@ -77,8 +73,11 @@ export default function Home() {
         </div>
       </section>
 
+      <ProblemSection />
+      <ProcessSection />
+      <TestimonialsSection />
       <AreasServed />
-      <ContactSection />
+      <ContactSection generalInquiry />
       <FAQ />
     </div>
   );

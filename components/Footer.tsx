@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-white/60 text-xs sm:text-sm text-center sm:text-left">
-              © 2024 Pracownia Protetyki Stomatologicznej - Karolina Szymańska. Wszystkie prawa zastrzeżone.
+              © {new Date().getFullYear()} Pracownia Protetyki Stomatologicznej - Karolina Szymańska. Wszystkie prawa zastrzeżone.
             </p>
             <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
               <a href="/policies/Polityka prywatności_Karolina.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-clr-accent transition-colors">

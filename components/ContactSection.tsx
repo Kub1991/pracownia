@@ -53,11 +53,20 @@ type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 export default function ContactSection({
   showMap = true,
   layoutVariant = 'default',
+  generalInquiry = false,
 }: {
   showMap?: boolean;
   layoutVariant?: 'default' | 'subpage';
+  generalInquiry?: boolean;
 }) {
   const isSubpageLayout = layoutVariant === 'subpage';
+  const inquiryOptions = generalInquiry
+    ? [
+        { id: 'new-dentures', icon: <SparklesIcon className="h-5 w-5" />, label: 'Wykonanie protezy' },
+        { id: 'consultation', icon: <AdjustmentsHorizontalIcon className="h-5 w-5" />, label: 'Konsultacja protetyczna' },
+        ...problemOptions,
+      ]
+    : problemOptions;
 
   const [selectedProblems, setSelectedProblems] = useState<string[]>([]);
   const [formData, setFormData] = useState({
@@ -87,9 +96,12 @@ export default function ContactSection({
       const webhookData = {
         phone: formData.phone,
         repairDate: formData.repairDate,
-        problems: selectedProblems,
+        // Keep the existing Make enum; the full inquiry stays in problemsText.
+        problems: Array.from(new Set(selectedProblems.map((id) =>
+          id === 'new-dentures' || id === 'consultation' ? 'other' : id
+        ))),
         problemsText: selectedProblems
-          .map((id) => problemOptions.find((option) => option.id === id)?.label)
+          .map((id) => inquiryOptions.find((option) => option.id === id)?.label)
           .join(', '),
         consent: formData.consent,
         submittedAt: new Date().toISOString(),
@@ -161,13 +173,13 @@ export default function ContactSection({
                   Potrzebujesz pomocy? Jestem blisko!
                 </h2>
                 <p className="text-base sm:text-lg text-clr-dark/80 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-                  Skontaktuj się ze mną już dziś - pomogę rozwiązać problem z Twoją protezą.
+                  Zadzwoń lub wyślij zapytanie o naprawę, wykonanie lub dopasowanie protezy. Ustalimy zakres pomocy i termin wizyty.
                 </p>
               </div>
             )}
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
-              <div className={`space-y-6 sm:space-y-8 ${isSubpageLayout ? 'order-1 lg:order-1' : 'order-2 lg:order-1'}`}>
+              <div className={`space-y-6 sm:space-y-8 order-1`}>
                 <a href="tel:+48735491129" className="block">
                   <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-6 sm:p-8 border-none shadow-none cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                     <div className="text-center">
@@ -186,6 +198,19 @@ export default function ContactSection({
                     </div>
                   </Card>
                 </a>
+
+                <div className="text-sm sm:text-base text-clr-dark/80 leading-relaxed">
+                  <p className="font-medium text-clr-dark">Pracownia Karoliny Szymańskiej</p>
+                  <address className="not-italic">ul. E. J. Osmańczyka 18, 77-424 Zakrzewo</address>
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=53.41201728970456%2C17.151588043383537"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 underline underline-offset-4 hover:text-clr-dark"
+                  >
+                    Wyznacz trasę do pracowni w Google Maps
+                  </a>
+                </div>
 
                 {showMap && (
                   <Card
@@ -208,22 +233,22 @@ export default function ContactSection({
                 )}
               </div>
 
-              <div className={isSubpageLayout ? 'order-2 lg:order-2' : 'order-1 lg:order-2'}>
+              <div className="order-2">
                 <Card className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-none">
                   <h3 className="font-unbounded font-bold text-lg sm:text-xl text-clr-dark mb-4 sm:mb-6 text-center">
                     Formularz kontaktowy
                   </h3>
 
                   {submitStatus === 'success' && (
-                    <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-100 border border-green-300 rounded-xl">
+                    <div role="status" className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-100 border border-green-300 rounded-xl">
                       <p className="text-green-800 text-sm sm:text-base font-medium text-center">
-                        ✓ Formularz został wysłany pomyślnie! Oddzwonię w ciągu 2 godzin.
+                        ✓ Zapytanie zostało wysłane. Skontaktuję się z Tobą w godzinach pracy pracowni.
                       </p>
                     </div>
                   )}
 
                   {submitStatus === 'error' && (
-                    <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-100 border border-red-300 rounded-xl">
+                    <div role="alert" className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-100 border border-red-300 rounded-xl">
                       <p className="text-red-800 text-sm sm:text-base font-medium text-center">
                         ✕ Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń: 735 491 129
                       </p>
@@ -238,6 +263,8 @@ export default function ContactSection({
                       <Input
                         id="phone"
                         type="tel"
+                        name="phone"
+                        autoComplete="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', e.target.value)}
                         className="w-full text-sm sm:text-base"
@@ -248,14 +275,17 @@ export default function ContactSection({
                     </div>
 
                     <div>
-                      <Label className="text-clr-dark font-medium mb-2 sm:mb-3 block text-sm sm:text-base">
-                        Jaki jest problem z protezą?
-                      </Label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                        {problemOptions.map((problem) => (
-                          <Card
+                      <p id="inquiry-label" className="text-clr-dark font-medium mb-2 sm:mb-3 block text-sm sm:text-base">
+                        {generalInquiry ? 'W jakiej sprawie chcesz się skontaktować?' : 'Jaki jest problem z protezą?'}
+                      </p>
+                      <div role="group" aria-labelledby="inquiry-label" className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                        {inquiryOptions.map((problem) => (
+                          <button
+                            type="button"
+                            aria-pressed={selectedProblems.includes(problem.id)}
+                            disabled={submitStatus === 'submitting'}
                             key={problem.id}
-                            className={`p-2 sm:p-3 cursor-pointer transition-all duration-200 border-2 ${
+                            className={`text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clr-dark p-2 sm:p-3 cursor-pointer transition-all duration-200 border-2 ${
                               selectedProblems.includes(problem.id)
                                 ? 'bg-clr-accent border-clr-accent text-clr-dark'
                                 : 'bg-white border-gray-200 hover:border-clr-accent/50'
@@ -277,26 +307,29 @@ export default function ContactSection({
                               </div>
                               <span className="text-xs sm:text-sm font-medium">{problem.label}</span>
                             </div>
-                          </Card>
+                          </button>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <Label className="text-clr-dark font-medium mb-2 block text-sm sm:text-base">
-                        Na kiedy naprawa?
+                      <Label htmlFor="repair-date" className="text-clr-dark font-medium mb-2 block text-sm sm:text-base">
+                        {generalInquiry ? 'Preferowany termin wizyty (opcjonalnie)' : 'Na kiedy naprawa?'}
                       </Label>
                       <Input
+                        id="repair-date"
+                        name="repairDate"
+                        aria-describedby="date-help"
                         type="date"
                         value={formData.repairDate}
                         onChange={(e) => handleInputChange('repairDate', e.target.value)}
                         min={getMinDate()}
                         className="w-full text-sm sm:text-base"
-                        required
+                        required={!generalInquiry}
                         disabled={submitStatus === 'submitting'}
                       />
-                      <p className="text-xs text-clr-dark/60 mt-1">
-                        Wybierz dogodny termin naprawy (najwcześniej jutro)
+                      <p id="date-help" className="text-xs text-clr-dark/70 mt-1">
+                        {generalInquiry ? 'Jeśli masz preferowany termin, wskaż go. Datę wizyty potwierdzimy w rozmowie. W pilnej sprawie zadzwoń.' : 'Wybierz dogodny termin naprawy (najwcześniej jutro). Termin wymaga potwierdzenia.'}
                       </p>
                     </div>
 
@@ -341,10 +374,10 @@ export default function ContactSection({
                       <div className="text-center">
                         <div className="bg-clr-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center">
                           <p className="text-clr-dark font-unbounded font-bold text-base sm:text-lg mb-1">
-                            ⏰ Oddzwonię w ciągu 2 godzin!
+                            Skontaktuję się z Tobą w godzinach pracy
                           </p>
                           <p className="text-clr-dark/80 text-xs sm:text-sm">
-                            Szybka odpowiedź gwarantowana
+                            Wysłanie zapytania nie jest rezerwacją terminu.
                           </p>
                         </div>
 

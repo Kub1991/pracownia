@@ -10,14 +10,14 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-E1QBMV
 const ENABLE_GA = process.env.NODE_ENV === 'production';
 
 const inter = localFont({
-  src: './fonts/Inter-Variable.ttf',
+  src: './fonts/Inter-Variable.woff2',
   weight: '100 900',
   display: 'swap',
   variable: '--font-inter'
 });
 
 const unbounded = localFont({
-  src: './fonts/Unbounded-Variable.ttf',
+  src: './fonts/Unbounded-Variable.woff2',
   weight: '200 900',
   display: 'swap',
   variable: '--font-unbounded'
@@ -26,7 +26,7 @@ const unbounded = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://protetyka-zakrzewo.pl'),
   title: 'Protetyka Zakrzewo – Karolina Szymańska | Naprawa protez',
-  description: 'Szybka naprawa protez w Zakrzewie i okolicach. Profesjonalna pracownia protetyki stomatologicznej Karoliny Szymańskiej. Naprawa nawet w 24h.',
+  description: 'Pracownia Karoliny Szymańskiej w Zakrzewie: naprawa, wykonanie i dopasowanie protez. Zadzwoń i ustal zakres pomocy oraz termin.',
   keywords: 'naprawa protez, protetyka stomatologiczna, Zakrzewo, technik dentystyczny, naprawa protez 24h, Karolina Szymańska',
   authors: [{ name: 'Karolina Szymańska' }],
   creator: 'Karolina Szymańska',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Protetyka Zakrzewo – Karolina Szymańska',
-    description: 'Szybka naprawa protez w Zakrzewie i okolicach. Naprawa nawet w 24h.',
+    description: 'Pracownia Karoliny Szymańskiej w Zakrzewie: naprawa, wykonanie i dopasowanie protez. Zadzwoń i ustal zakres pomocy oraz termin.',
     url: 'https://protetyka-zakrzewo.pl',
     siteName: 'Pracownia Protetyki Stomatologicznej',
     locale: 'pl_PL',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Protetyka Zakrzewo – Karolina Szymańska',
-    description: 'Szybka naprawa protez w Zakrzewie i okolicach. Naprawa nawet w 24h.',
+    description: 'Pracownia Karoliny Szymańskiej w Zakrzewie: naprawa, wykonanie i dopasowanie protez. Zadzwoń i ustal zakres pomocy oraz termin.',
   },
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#FAD7DB',
