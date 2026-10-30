@@ -58,7 +58,25 @@ export default function LocalServicePage({ content, pageKey }: {
           <h2 id="dojazd" className={headingClass}>Dojazd z {content.from} do pracowni w Zakrzewie</h2>
           <p className="text-clr-dark/80 leading-relaxed max-w-3xl">{content.travel}</p>
           {content.city === 'Złotów' && <p className="text-sm text-clr-dark/70 mt-3">Orientacyjna odległość między miejscowościami: <a className="underline underline-offset-4" href="https://conadrogach.pl/wyznaczanie-trasy/zlotow-zakrzewo/" target="_blank" rel="noopener noreferrer">CoNaDrogach.pl<span className="sr-only">, nowa karta</span></a>. Trasę do samego budynku sprawdź w nawigacji.</p>}
-          <p className="mt-5 text-sm sm:text-base text-clr-dark/80 leading-relaxed"><strong className="text-clr-dark">Godziny otwarcia:</strong> poniedziałek 12:00–19:00, wtorek–czwartek 9:00–15:00, piątek 9:00–14:00. Sobota i niedziela: zamknięte. Termin wizyty potwierdź telefonicznie.</p>
+          <div className="mt-6 max-w-md">
+            <table className="w-full text-sm sm:text-base text-clr-dark border-collapse">
+              <caption className="text-left font-semibold pb-3">Godziny otwarcia</caption>
+              <tbody className="divide-y divide-gray-200 border-y border-gray-200">
+                {[
+                  ['Poniedziałek', '12:00–19:00'],
+                  ['Wtorek–czwartek', '9:00–15:00'],
+                  ['Piątek', '9:00–14:00'],
+                  ['Sobota–niedziela', 'Zamknięte'],
+                ].map(([days, hours]) => (
+                  <tr key={days}>
+                    <th scope="row" className="py-3 pr-3 text-left font-medium">{days}</th>
+                    <td className="py-3 text-right whitespace-nowrap tabular-nums">{hours}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-3 text-sm text-clr-dark/80">Termin wizyty potwierdź telefonicznie.</p>
+          </div>
         </section>
 
         {content.sections.map((section) => (
