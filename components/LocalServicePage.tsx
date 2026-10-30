@@ -15,11 +15,19 @@ export default function LocalServicePage({ content, pageKey }: {
   const serviceName = isRepair ? 'Naprawa protez' : 'Protezy zębowe';
   const url = `${SITE}/${pageKey}/`;
   const directions = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(`${content.city}, Polska`)}&destination=${encodeURIComponent(DESTINATION)}&travelmode=driving`;
-  const related = isRepair
-    ? [{ href: '/dopasowanie-protez/', label: 'Dopasowanie protezy przy ucisku lub przesuwaniu' },
-       { href: content.city === 'Złotów' ? '/protezy-zebowe/zlotow/' : '/protezy-zebowe/', label: 'Wykonanie nowej protezy' }]
-    : [{ href: '/naprawa-protez/zlotow/', label: 'Naprawa protezy dla osób ze Złotowa' },
-       { href: '/dopasowanie-protez/', label: 'Dopasowanie obecnej protezy' }];
+  const citySlug = pageKey.split('/')[1];
+  const related = [
+    { slug: 'naprawa-protez', label: 'Naprawa protez' },
+    { slug: 'protezy-zebowe', label: 'Protezy zębowe' },
+    { slug: 'dopasowanie-protez', label: 'Dopasowanie protez' },
+    { slug: 'konsultacje-protetyczne', label: 'Konsultacje protetyczne' },
+  ]
+    .filter((service) => service.slug !== content.service)
+    .map((service) => ({
+      href: `/${service.slug}/${citySlug}/`,
+      label: `${service.label} — ${content.city} (wizyta w Zakrzewie)`,
+    }));
+  const relatedLinkClass = 'inline-block px-3 py-2 rounded-full bg-gray-100 hover:bg-clr-accent/30 text-clr-dark transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clr-dark';
 
   return (
     <article className="bg-clr-gray pt-24 pb-12">
@@ -103,10 +111,13 @@ export default function LocalServicePage({ content, pageKey }: {
         </section>
 
         <section id={isRepair ? undefined : 'contact-section'} className={`${panelClass} scroll-mt-24`}>
-          <h2 className={headingClass}>Dobierz pomoc do swojej sytuacji</h2>
+          <h2 className={headingClass}>Powiązane usługi</h2>
           <p className="text-clr-dark/80 mb-4">Uszkodzenie, brak stabilności i wykonanie nowej protezy wymagają innego zakresu pracy. Zobacz także:</p>
-          <ul className="space-y-3 text-clr-dark">{related.map((link) => <li key={link.href}><Link href={link.href} className="underline underline-offset-4">{link.label}</Link></li>)}
-            <li><Link href={`/${content.service}/`} className="underline underline-offset-4">{serviceName} — pełny opis usługi w Zakrzewie</Link></li>
+          <ul className="flex flex-wrap gap-2 text-sm">
+            {related.map((link) => (
+              <li key={link.href}><Link href={link.href} className={relatedLinkClass}>{link.label}</Link></li>
+            ))}
+            <li><Link href={`/${content.service}/`} className={relatedLinkClass}>{serviceName} — pełny opis usługi w Zakrzewie</Link></li>
           </ul>
           <p className="mt-6 text-clr-dark/80">Chcesz ustalić termin? <a href="tel:+48735491129" className="text-clr-dark font-semibold underline underline-offset-4">Zadzwoń pod 735 491 129</a>.</p>
         </section>
