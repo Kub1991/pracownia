@@ -23,8 +23,9 @@ module.exports = {
   generateIndexSitemap: false,
   outDir: 'out',
   sitemapSize: 7000,
-  changefreq: 'weekly',
-  priority: 0.7,
+  // Omit lastmod until a reliable per-page content modification date is available.
+  autoLastmod: false,
+  // robots.txt has a single source of truth: app/robots.txt.
   exclude: ['/api/*', '/admin/*', '/_next/*', '/robots.txt', '/sitemap.xml', '/sitemap-*.xml', '/_not-found'],
   
   // Custom transformation for specific pages
@@ -41,34 +42,8 @@ module.exports = {
       }
     }
 
-    // Set higher priority for main pages
-    if (normalizedPath === '/') {
-      return {
-        loc: '/',
-        changefreq: 'daily',
-        priority: 1.0,
-        lastmod: new Date().toISOString(),
-      }
-    }
-    // Default return
     return {
       loc: withTrailingSlash(normalizedPath),
-      changefreq: config.changefreq,
-      priority: config.priority,
-      lastmod: new Date().toISOString(),
     }
-  },
-
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/'],
-      },
-    ],
-    additionalSitemaps: [
-      'https://protetyka-zakrzewo.pl/sitemap.xml',
-    ],
   },
 }
