@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 const faqData = [
   {
     question: "Ile trwa naprawa protezy?",
-    answer: "Zwykle do 24 godzin. W pilnych przypadkach możliwy szybszy termin po uzgodnieniu telefonicznie."
+    answer: "Naprawa nawet w 24 godziny jest możliwa zależnie od rodzaju uszkodzenia i dostępności. Termin ustalam po ocenie protezy. W pilnej sprawie zadzwoń przed przyjazdem."
   },
   {
     question: "Czy wykonujecie naprawy ekspresowe?",

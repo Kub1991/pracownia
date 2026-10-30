@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRightIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -14,10 +12,9 @@ export default function Hero() {
           <div className="rounded-2xl lg:rounded-3xl px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 shadow-sm bg-white">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
               {/* Left Column */}
-              <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1">
                 <h1 className="font-unbounded font-bold text-2xl sm:text-3xl lg:text-4xl text-clr-dark leading-tight">
-                  <span className="text-3xl sm:text-4xl lg:text-5xl">Pękła Ci Proteza?</span>
-                  <span className="block mt-2 text-xl sm:text-2xl lg:text-3xl text-clr-dark">Szybka i Bezbolesna Naprawa w Zakrzewie!</span>
+                  Pracownia protetyczna w Zakrzewie — protezy i naprawa protez.
                 </h1>
                 
                 <h2 className="font-inter font-medium text-base sm:text-lg lg:text-xl text-clr-dark/70 -mt-2">
@@ -25,15 +22,15 @@ export default function Hero() {
                 </h2>
                 
                 <p className="text-base sm:text-lg text-clr-dark/80 max-w-lg leading-relaxed">
-                  Zaufana Pomoc, Gdy Potrzebujesz Jej Najbardziej – Naprawa Protez Nawet w 24h w Zakrzewo i Okolice
+                  Naprawa, wykonanie i dopasowanie protez oraz konsultacje protetyczne w pracowni Karoliny Szymańskiej. Zadzwoń, aby ustalić zakres pomocy i termin wizyty w Zakrzewie.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                   {/* Phone Number Card */}
                   <a href="tel:+48735491129" className="block">
                     <Card className="bg-clr-accent text-clr-dark rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border-none shadow-none">
-                      <div className="flex flex-col items-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
-                        <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4 mt-4 sm:mt-6">
+                      <div className="flex flex-col items-center text-center h-full min-h-[96px] sm:min-h-[140px] lg:min-h-[160px]">
+                        <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-white text-clr-dark mb-3 sm:mb-4 mt-2 sm:mt-6">
                           <PhoneIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                         </div>
                         {/* Mobile shows text, desktop shows phone number */}
@@ -48,24 +45,18 @@ export default function Hero() {
                   </a>
 
                   {/* Ask About Repair Card */}
-                  <Card 
+                  <a href="#contact-section"
                     className="bg-gray-50 rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg border border-clr-accent shadow-none"
-                    onClick={() => {
-                      const element = document.getElementById('contact-section');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
                   >
-                    <div className="flex flex-col items-center text-center h-full min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]">
-                      <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4 mt-4 sm:mt-6">
+                    <div className="flex flex-col items-center text-center h-full min-h-[96px] sm:min-h-[140px] lg:min-h-[160px]">
+                      <div className="inline-flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-clr-dark text-white mb-3 sm:mb-4 mt-2 sm:mt-6">
                       <ArrowRightIcon className="h-5 sm:h-6 w-5 sm:w-6" />
                       </div>
                       <span className="font-unbounded font-bold text-sm sm:text-base lg:text-lg text-clr-dark">
-                        Zapytaj o Naprawę
+                        Zapytaj o usługę
                       </span>
                     </div>
-                  </Card>
+                  </a>
                 </div>
 
                 {/* Testimonial */}
@@ -73,7 +64,7 @@ export default function Hero() {
                   <div className="flex items-start gap-4">
                     <div className="relative w-10 sm:w-12 h-10 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
                       <Image
-                        src="/profile_testimonial.jpg"
+                        src="/profile_testimonial.webp"
                         alt="Pacjent po naprawie protezy"
                         fill
                         className="object-cover"
@@ -101,10 +92,10 @@ export default function Hero() {
               </div>
 
               {/* Right Column */}
-              <div className="relative order-1 lg:order-2">
+              <div className="relative order-2">
                 <div className="relative aspect-[4/3] sm:aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden">
                   <Image
-                    src="/hero_PHOTO.jpg"
+                    src="/hero_PHOTO.webp"
                     alt="Pracownia protetyki stomatologicznej w Zakrzewie"
                     fill
                     className="object-cover"

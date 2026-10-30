@@ -11,6 +11,7 @@ import clsx from 'clsx';
 
 const navLinks = [
   { name: 'Start', href: '/' },
+  { name: 'Usługi', href: '#services' },
   { name: 'Problemy', href: '#problem-section' },
   { name: 'Proces', href: '#process-section' },
   { name: 'Obszar', href: '#areas-served' },
@@ -71,7 +72,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -101,7 +102,7 @@ export default function Navbar() {
           {/* Mobile Menu */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Otwórz menu">
                 <Bars3Icon className="h-5 sm:h-6 w-5 sm:w-6 text-clr-dark" />
               </Button>
             </SheetTrigger>

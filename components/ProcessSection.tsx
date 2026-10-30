@@ -22,8 +22,8 @@ const processSteps = [
   },
   {
     icon: <WrenchScrewdriverIcon className="h-6 w-6" />,
-    title: "Naprawa już w 24h",
-    description: "Zajmę się protezą od razu lub umówimy dogodny termin."
+    title: "Ustalenie terminu naprawy",
+    description: "Naprawa nawet w 24 godziny jest możliwa zależnie od usterki i dostępności. Termin potwierdzę po ocenie."
   },
   {
     icon: <HandThumbUpIcon className="h-6 w-6" />,
@@ -44,7 +44,7 @@ export default function ProcessSection() {
               <div className="relative order-2 lg:order-1">
                 <div className="relative aspect-[4/3] lg:aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden">
                   <Image
-                    src="/SECTION_PHOTO copy.jpg"
+                    src="/section-photo.webp"
                     alt="Pracownia protetyki stomatologicznej w Zakrzewie"
                     fill
                     className="object-cover"
