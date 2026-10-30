@@ -1,6 +1,8 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import ContactSection from '@/components/ContactSection';
+import LocalServicePage from '@/components/LocalServicePage';
+import { LOCAL_SERVICE_PAGES } from '@/lib/local-service-pages';
 
 const SERVICES = {
   'naprawa-protez': {
@@ -399,6 +401,23 @@ export function generateMetadata({
   const isIndexableCity = shouldIndexCity(params.city);
   const serviceHubPath = SERVICE_HUB_PATHS[params.service];
   const pageOverride = LOCAL_PAGE_OVERRIDES[`${params.service}/${params.city}`];
+  const content = LOCAL_SERVICE_PAGES[`${params.service}/${params.city}`];
+
+  if (content) {
+    const path = `/${params.service}/${params.city}/`;
+    return {
+      title: content.title,
+      description: content.description,
+      alternates: { canonical: path },
+      robots: { index: true, follow: true },
+      openGraph: {
+        title: content.title, description: content.description, url: path,
+        siteName: 'Pracownia Protetyki Stomatologicznej — Karolina Szymańska',
+        locale: 'pl_PL', type: 'website',
+      },
+      twitter: { card: 'summary', title: content.title, description: content.description },
+    };
+  }
 
   const metadata: Metadata = {
     title:
@@ -439,6 +458,10 @@ export default function LocationServicePage({
   if (!service || !city) {
     return null;
   }
+
+  const pageKey = `${params.service}/${params.city}`;
+  const content = LOCAL_SERVICE_PAGES[pageKey];
+  if (content) return <LocalServicePage content={content} pageKey={pageKey} />;
 
   const relatedCities = (Object.keys(CITIES) as CitySlug[])
     .filter((slug) => shouldIndexCity(slug) && slug !== params.city)
